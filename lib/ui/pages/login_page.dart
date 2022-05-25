@@ -358,6 +358,44 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Belum memiliki akun? ',
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: semibold,
+                          color: kBlackColor,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.fade,
+                              duration: const Duration(milliseconds: 0),
+                              reverseDuration: const Duration(milliseconds: 0),
+                              child: const SignupPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Daftar Sekarang',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight: semibold,
+                            color: kOrangeColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           )
