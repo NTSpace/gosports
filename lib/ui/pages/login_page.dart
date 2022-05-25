@@ -136,26 +136,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(-0.85, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    child: Text(
-                      'EMAIL',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 5,
+                    top: 15,
                   ),
                   child: TextFormField(
                     controller: emailAddressControler,
@@ -198,26 +183,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(-0.85, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    child: Text(
-                      'PASSWORD',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 5,
+                    top: 15,
                   ),
                   child: TextFormField(
                     controller: passwordControler,
@@ -272,50 +242,53 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Theme(
-                          data: ThemeData(
-                            unselectedWidgetColor: const Color(0xFF95A1AC),
-                          ),
-                          child: const IngatSaya(),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              duration: const Duration(milliseconds: 500),
-                              reverseDuration:
-                                  const Duration(milliseconds: 500),
-                              child: const LupaPassword(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: const AlignmentDirectional(0, 0),
+                          child: Theme(
+                            data: ThemeData(
+                              unselectedWidgetColor: const Color(0xFF95A1AC),
                             ),
-                          );
-                        },
-                        child: Text(
-                          'Lupa Password ?',
-                          style: GoogleFonts.poppins(
-                            color: kBlackColor,
-                            fontSize: 14,
-                            fontWeight: semibold,
+                            child: const IngatSaya(),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+                        child: InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: const Duration(milliseconds: 500),
+                                reverseDuration:
+                                    const Duration(milliseconds: 500),
+                                child: const LupaPassword(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Lupa Password ?',
+                            style: GoogleFonts.poppins(
+                              color: kBlackColor,
+                              fontSize: 14,
+                              fontWeight: semibold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(top: 15),
                   child: LoginButton(
                     text: 'MASUK',
                     onPressed: () {

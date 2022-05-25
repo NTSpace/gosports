@@ -139,26 +139,11 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(-0.85, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    child: Text(
-                      'EMAIL',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 5,
+                    top: 15,
                   ),
                   child: TextFormField(
                     controller: emailAddressControler,
@@ -201,26 +186,11 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(-0.85, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    child: Text(
-                      'PASSWORD',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 5,
+                    top: 15,
                   ),
                   child: TextFormField(
                     controller: passwordControler,
@@ -275,32 +245,17 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(-0.85, 0),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 15,
-                    ),
-                    child: Text(
-                      'KONFIRMASI PASSWORD',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 5,
+                    top: 15,
                   ),
                   child: TextFormField(
                     controller: cpasswordControler,
                     obscureText: !cpasswordVisibility,
                     decoration: InputDecoration(
-                      labelText: 'Password',
+                      labelText: 'Konfirmasi Password',
                       labelStyle: GoogleFonts.lexendDeca(
                         fontSize: 16,
                         fontWeight: regular,
@@ -350,7 +305,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 2),
+                  padding: const EdgeInsets.only(top: 15),
                   child: ButtonSignup(
                     text: 'BUAT AKUN',
                     onPressed: () {
@@ -394,29 +349,20 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10, 30, 0, 0),
                   child: Container(
-                    alignment: AlignmentDirectional.center,
-                    width: 200,
-                    height: 50,
+                    alignment: AlignmentDirectional.centerStart,
+                    width: 340,
+                    height: 70,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
-                          
                           style: GoogleFonts.poppins(
-                            fontSize: 11,
-                            fontWeight: regular,
-                            color: kBlackColor,
-                          ),
-                        ),
-                        Text(
-                          'yang berisikan link untuk mengaktifkan akun',
-                          style: GoogleFonts.poppins(
-                            fontSize: 11,
-                            fontWeight: regular,
+                            fontSize: 14,
+                            fontWeight: bold,
                             color: kBlackColor,
                           ),
                         ),
