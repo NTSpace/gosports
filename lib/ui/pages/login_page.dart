@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                width: 185,
+                width: 187,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kGreyColor,
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Container(
-                width: 185,
+                width: 187,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kWhiteColor,

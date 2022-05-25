@@ -66,7 +66,7 @@ class _SignupPageState extends State<SignupPage> {
             // Navigasi login dan signup page
             children: <Widget>[
               Container(
-                width: 185,
+                width: 187,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kWhiteColor,
@@ -96,7 +96,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               Container(
-                width: 185,
+                width: 187,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kGreyColor,
