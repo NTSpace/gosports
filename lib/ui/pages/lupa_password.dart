@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/atur_ulang_password.dart';
 import 'package:gosports/ui/widgets/kirim_email.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LupaPassword extends StatefulWidget {
   const LupaPassword({Key? key}) : super(key: key);
@@ -119,8 +121,16 @@ class _LupaPasswordState extends State<LupaPassword> {
                   padding: const EdgeInsets.only(top: 15),
                   child: KirimButton(
                     text: 'KIRIM',
-                    onPressed: () {
-                      print('Button-Login pressed ...');
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.fade,
+                          duration: const Duration(milliseconds: 0),
+                          reverseDuration: const Duration(milliseconds: 0),
+                          child: const AturUlangPass(),
+                        ),
+                      );
                     },
                   ),
                 ),

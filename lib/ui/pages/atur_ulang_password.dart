@@ -3,22 +3,28 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/widgets/kirim_email.dart';
 
-class LupaPassword extends StatefulWidget {
-  const LupaPassword({Key? key}) : super(key: key);
+class AturUlangPass extends StatefulWidget {
+  const AturUlangPass({Key? key}) : super(key: key);
 
   @override
-  State<LupaPassword> createState() => _LupaPasswordState();
+  State<AturUlangPass> createState() => _AturUlangPassState();
 }
 
-class _LupaPasswordState extends State<LupaPassword> {
-  late TextEditingController emailAddressControler;
+class _AturUlangPassState extends State<AturUlangPass> {
+  late TextEditingController passwordControler;
+  late bool passwordVisibility;
+  late TextEditingController cpasswordControler;
+  late bool cpasswordVisibility;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    emailAddressControler = TextEditingController();
+    passwordControler = TextEditingController();
+    passwordVisibility = false;
+    cpasswordControler = TextEditingController();
+    cpasswordVisibility = false;
   }
 
   @override
@@ -60,7 +66,7 @@ class _LupaPasswordState extends State<LupaPassword> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30, left: 15),
                     child: Text(
-                      '> LUPA PASSWORD',
+                      '> ATUR ULANG PASSWORD',
                       style: GoogleFonts.montserrat(
                           fontSize: 23,
                           fontWeight: semibold,
@@ -75,16 +81,16 @@ class _LupaPasswordState extends State<LupaPassword> {
                     top: 15,
                   ),
                   child: TextFormField(
-                    controller: emailAddressControler,
-                    obscureText: false,
+                    controller: passwordControler,
+                    obscureText: !passwordVisibility,
                     decoration: InputDecoration(
-                      labelText: 'Email',
+                      labelText: 'Password',
                       labelStyle: GoogleFonts.lexendDeca(
                         fontSize: 16,
                         fontWeight: regular,
                         color: const Color.fromARGB(151, 116, 113, 113),
                       ),
-                      hintText: 'Masukkan email...',
+                      hintText: 'Masukkan Password...',
                       hintStyle: GoogleFonts.lexendDeca(
                         fontSize: 16,
                         fontWeight: regular,
@@ -107,43 +113,92 @@ class _LupaPasswordState extends State<LupaPassword> {
                       filled: true,
                       fillColor: kGreyColor,
                       contentPadding: const EdgeInsets.all(24),
+                      suffixIcon: InkWell(
+                        onTap: () => setState(
+                          () => passwordVisibility = !passwordVisibility,
+                        ),
+                        child: Icon(
+                          passwordVisibility
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
+                          color: const Color.fromARGB(151, 116, 113, 113),
+                          size: 20,
+                        ),
+                      ),
                     ),
                     style: GoogleFonts.lexendDeca(
                       fontSize: 14,
-                      color: kBlackColor,
                       fontWeight: regular,
+                      color: kBlackColor,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 24,
+                    left: 24,
+                    top: 15,
+                  ),
+                  child: TextFormField(
+                    controller: cpasswordControler,
+                    obscureText: !cpasswordVisibility,
+                    decoration: InputDecoration(
+                      labelText: 'Konfirmasi Password',
+                      labelStyle: GoogleFonts.lexendDeca(
+                        fontSize: 16,
+                        fontWeight: regular,
+                        color: const Color.fromARGB(151, 116, 113, 113),
+                      ),
+                      hintText: 'Masukkan Password...',
+                      hintStyle: GoogleFonts.lexendDeca(
+                        fontSize: 16,
+                        fontWeight: regular,
+                        color: const Color.fromARGB(151, 116, 113, 113),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kGreyColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kBlackColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      filled: true,
+                      fillColor: kGreyColor,
+                      contentPadding: const EdgeInsets.all(24),
+                      suffixIcon: InkWell(
+                        onTap: () => setState(
+                          () => cpasswordVisibility = !cpasswordVisibility,
+                        ),
+                        child: Icon(
+                          cpasswordVisibility
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
+                          color: const Color.fromARGB(151, 116, 113, 113),
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                    style: GoogleFonts.lexendDeca(
+                      fontSize: 14,
+                      fontWeight: regular,
+                      color: kBlackColor,
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: KirimButton(
-                    text: 'KIRIM',
+                    text: 'SIMPAN',
                     onPressed: () {
                       print('Button-Login pressed ...');
                     },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10, 50, 0, 0),
-                  child: Container(
-                    alignment: AlignmentDirectional.centerStart,
-                    width: 340,
-                    height: 70,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Anda akan menerima email yang berisikan link untuk melakukan pengaturan ulang password anda',
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: bold,
-                            color: kBlackColor,
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                 ),
               ],
