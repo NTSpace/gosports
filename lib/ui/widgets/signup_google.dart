@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class GoogleLogin extends StatelessWidget {
+class GoogleSignUp extends StatelessWidget {
   final String text;
   final Function() onPressed;
-  const GoogleLogin({required this.text, required this.onPressed, Key? key})
+  const GoogleSignUp({required this.text, required this.onPressed, Key? key})
       : super(key: key);
 
   @override

@@ -316,7 +316,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
-                  child: GradientButtonFb1(
+                  child: LoginButton(
                     text: 'MASUK',
                     onPressed: () {
                       print('Button-Login pressed ...');
@@ -351,7 +351,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
-                  child: GradientButtonFb2(
+                  child: GoogleLogin(
                     text: 'Masuk degan Google',
                     onPressed: () {
                       print('Button-Login pressed ...');

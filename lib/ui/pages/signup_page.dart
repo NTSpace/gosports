@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/widgets/button_signup.dart';
+import '../widgets/signup_google.dart';
 import 'login_page.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -345,6 +347,67 @@ class _SignupPageState extends State<SignupPage> {
                       fontWeight: regular,
                       color: kBlackColor,
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5),
+                  child: ButtonSignup(
+                    text: 'BUAT AKUN',
+                    onPressed: () {
+                      print('Button-Login pressed ...');
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0, 0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.only(
+                            top: 10,
+                            bottom: 10,
+                          ),
+                          child: Text(
+                            '-------------------- ATAU  -------------------',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                fontWeight: semibold,
+                                color: kBlackColor),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5),
+                  child: GoogleSignUp(
+                    text: 'DAFTAR MELALUI GOOGLE',
+                    onPressed: () {
+                      print('Button-Login pressed ...');
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: semibold,
+                          color: kBlackColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
