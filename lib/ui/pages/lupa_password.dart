@@ -49,7 +49,6 @@ class _LupaPasswordState extends State<LupaPassword> {
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SingleChildScrollView(
             child: Column(
@@ -59,9 +58,9 @@ class _LupaPasswordState extends State<LupaPassword> {
                 Align(
                   alignment: const AlignmentDirectional(-0.85, 0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 25),
+                    padding: const EdgeInsets.only(top: 30, left: 15),
                     child: Text(
-                      'LUPA PASSWORD',
+                      '> LUPA PASSWORD',
                       style: GoogleFonts.montserrat(
                           fontSize: 23,
                           fontWeight: semibold,
