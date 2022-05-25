@@ -350,7 +350,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(top: 2),
                   child: ButtonSignup(
                     text: 'BUAT AKUN',
                     onPressed: () {
@@ -385,7 +385,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(top: 2),
                   child: GoogleSignUp(
                     text: 'DAFTAR MELALUI GOOGLE',
                     onPressed: () {
@@ -395,19 +395,33 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          fontWeight: semibold,
-                          color: kBlackColor,
+                  child: Container(
+                    alignment: AlignmentDirectional.center,
+                    width: 200,
+                    height: 50,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
+                          
+                          style: GoogleFonts.poppins(
+                            fontSize: 11,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
                         ),
-                      ),
-                    ],
+                        Text(
+                          'yang berisikan link untuk mengaktifkan akun',
+                          style: GoogleFonts.poppins(
+                            fontSize: 11,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
