@@ -24,7 +24,7 @@ class _LupaPasswordState extends State<LupaPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBlackColor,
+      backgroundColor: kWhiteColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(66),
         child: AppBar(
