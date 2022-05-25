@@ -66,7 +66,7 @@ class _SignupPageState extends State<SignupPage> {
             // Navigasi login dan signup page
             children: <Widget>[
               Container(
-                width: 190,
+                width: 185,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kWhiteColor,
@@ -96,7 +96,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               Container(
-                width: 190,
+                width: 185,
                 height: 50,
                 decoration: BoxDecoration(
                   color: kGreyColor,
@@ -340,9 +340,9 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 2),
+                  padding: const EdgeInsets.only(top: 5),
                   child: GoogleSignUp(
-                    text: 'DAFTAR MELALUI GOOGLE',
+                    text: 'Daftar Melalui Google',
                     onPressed: () {
                       print('Button-Login pressed ...');
                     },
