@@ -39,7 +39,7 @@ class _PertandinganState extends State<Pertandingan> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 Align(
                   alignment: const AlignmentDirectional(-0.7, -0.2),
                   child: Padding(
