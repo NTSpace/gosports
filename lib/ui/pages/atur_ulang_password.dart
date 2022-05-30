@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/widgets/kirim_email.dart';
+import 'package:gosports/ui/widgets/dialog_pass.dart';
+import 'package:gosports/ui/widgets/simpan_button.dart';
 
 class AturUlangPass extends StatefulWidget {
   const AturUlangPass({Key? key}) : super(key: key);
@@ -194,10 +195,16 @@ class _AturUlangPassState extends State<AturUlangPass> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
-                  child: KirimButton(
+                  child: SimpanButton(
                     text: 'SIMPAN',
                     onPressed: () {
-                      print('Button-Login pressed ...');
+                      showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialog(
+                            description:
+                                'Silahkan masuk kembali dengan menggunakan password baru untuk melanjutkan aktivitas',
+                            title: "Password Berhasil Diubah"),
+                      );
                     },
                   ),
                 ),
