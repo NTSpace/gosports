@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/profile.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ResetPage extends StatefulWidget {
   const ResetPage({Key? key}) : super(key: key);
@@ -17,10 +19,20 @@ class _ResetPage extends State<ResetPage> {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Color(0xff292C31),
+          backgroundColor: const Color(0xff292C31),
           elevation: 0,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: const Duration(milliseconds: 0),
+                    reverseDuration: const Duration(milliseconds: 0),
+                    child: const Profile(),
+                  ),
+                );
+              },
               icon: Image.asset(
                 'assets/back_icon.png',
                 width: 15,
@@ -38,23 +50,23 @@ class _ResetPage extends State<ResetPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 35),
-              padding: EdgeInsets.all(43),
+              margin: const EdgeInsets.only(top: 35),
+              padding: const EdgeInsets.all(43),
               child: Image.asset(
                 'assets/reset_password_icon.png',
                 width: 40,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xffFFE5D2),
                 borderRadius: BorderRadius.all(Radius.circular(100)),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 10),
                     child: Text(
                       'Reset your password',
                       style: GoogleFonts.montserrat(
@@ -64,8 +76,8 @@ class _ResetPage extends State<ResetPage> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.symmetric(horizontal: 51),
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 51),
                     child: Text(
                       'Kata sandi Anda harus lebih dari enam karakter dan berisi angka, huruf, dan karakter khusus (! \$ @ % %)',
                       textAlign: TextAlign.center,
@@ -79,63 +91,57 @@ class _ResetPage extends State<ResetPage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 32),
-              padding: EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Kata sandi lama',
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
+              margin: const EdgeInsets.only(top: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Kata sandi lama',
+                  hintStyle: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
                     ),
                   ),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Kata sandi baru',
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Kata sandi baru',
+                  hintStyle: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
                     ),
                   ),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Kata sandi baru sekali lagi',
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Kata sandi baru sekali lagi',
+                  hintStyle: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
                     ),
                   ),
                 ),
@@ -160,7 +166,7 @@ class _ResetPage extends State<ResetPage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 35, left: 25, right: 25),
+              margin: const EdgeInsets.only(top: 35, left: 25, right: 25),
               height: 32,
               width: double.infinity,
               child: TextButton(

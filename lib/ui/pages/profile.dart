@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/reset_password_page.dart';
 import 'package:gosports/ui/widgets/keluar_button.dart';
 import 'package:gosports/ui/widgets/simpan_button.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -26,6 +28,25 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        backgroundColor: const Color(0xff292C31),
+        elevation: 0,
+        leading: IconButton(
+            onPressed: () {},
+            icon: Image.asset(
+              'assets/back_icon.png',
+              width: 15,
+            )),
+        title: Text(
+          'PROFILE',
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
+      ),
       body: ListView(
         children: [
           Column(
@@ -35,7 +56,6 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                      top: 60,
                       left: 50,
                       right: 50,
                     ),
@@ -165,7 +185,7 @@ class _ProfileState extends State<Profile> {
                           icon: const Icon(
                             Icons.arrow_forward_ios_rounded,
                           ),
-                          color: kBlackColor,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -174,7 +194,17 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(top: 40),
                     child: SimpanButton(
                       text: 'Ganti Password',
-                      onPressed: () {},
+                      onPressed: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            duration: const Duration(milliseconds: 0),
+                            reverseDuration: const Duration(milliseconds: 0),
+                            child: const ResetPage(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
@@ -194,30 +224,15 @@ class _ProfileState extends State<Profile> {
   }
 
   Widget buildTop() {
-    final top = coverHeight - profileHeight - 50;
+    final top = coverHeight - profileHeight - 90;
 
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.topCenter,
       children: <Widget>[
         buildCoverImage(),
-        Padding(
-          padding: const EdgeInsets.only(
-            right: 245,
-            top: 25,
-          ),
-          child: Text(
-            'PROFILE',
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-              fontSize: 24,
-              fontWeight: bold,
-              color: kWhiteColor,
-            ),
-          ),
-        ),
         Positioned(
-          top: 240,
+          top: 200,
           child: Container(
             padding: const EdgeInsets.only(bottom: 5),
             height: 610,
@@ -236,7 +251,7 @@ class _ProfileState extends State<Profile> {
           child: buildProfileImage(),
         ),
         Positioned(
-          bottom: -25,
+          bottom: 20,
           right: 140,
           child: Container(
             alignment: Alignment.center,
