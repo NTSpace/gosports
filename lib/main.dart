@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/ui/pages/profile.dart';
 import 'ui/pages/splash_page.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Go-Sports',
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      home: Profile(),
     );
   }
 }
