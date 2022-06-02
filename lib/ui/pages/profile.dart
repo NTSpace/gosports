@@ -69,9 +69,9 @@ class _ProfileState extends State<Profile> {
                         await Navigator.push(
                           context,
                           PageTransition(
-                            type: PageTransitionType.fade,
-                            duration: const Duration(milliseconds: 0),
-                            reverseDuration: const Duration(milliseconds: 0),
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
                             child: const EditNama(),
                           ),
                         );
