@@ -22,21 +22,22 @@ class _ResetPage extends State<ResetPage> {
           backgroundColor: const Color(0xff292C31),
           elevation: 0,
           leading: IconButton(
-              onPressed: () async {
-                await Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    duration: const Duration(milliseconds: 0),
-                    reverseDuration: const Duration(milliseconds: 0),
-                    child: const Profile(),
-                  ),
-                );
-              },
-              icon: Image.asset(
-                'assets/back_icon.png',
-                width: 15,
-              )),
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.leftToRight,
+                  duration: const Duration(milliseconds: 500),
+                  reverseDuration: const Duration(milliseconds: 500),
+                  child: const Profile(),
+                ),
+              );
+            },
+            icon: Image.asset(
+              'assets/back_icon.png',
+              width: 15,
+            ),
+          ),
           title: Text(
             'Reset Password',
             style: GoogleFonts.montserrat(
@@ -181,7 +182,7 @@ class _ResetPage extends State<ResetPage> {
                   'Submit',
                   style: whiteTextStyle.copyWith(
                     fontWeight: medium,
-                    fontSize: 14,
+                    fontSize: 16,
                   ),
                 ),
               ),

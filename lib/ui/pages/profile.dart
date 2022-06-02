@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/edit_email.dart';
+import 'package:gosports/ui/pages/edit_nama.dart';
+import 'package:gosports/ui/pages/edit_nomor.dart';
+import 'package:gosports/ui/pages/login_page.dart';
 import 'package:gosports/ui/pages/reset_password_page.dart';
 import 'package:gosports/ui/widgets/keluar_button.dart';
 import 'package:gosports/ui/widgets/simpan_button.dart';
@@ -33,11 +37,12 @@ class _ProfileState extends State<Profile> {
         backgroundColor: const Color(0xff292C31),
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
-            icon: Image.asset(
-              'assets/back_icon.png',
-              width: 15,
-            )),
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/back_icon.png',
+            width: 15,
+          ),
+        ),
         title: Text(
           'PROFILE',
           style: GoogleFonts.montserrat(
@@ -59,30 +64,43 @@ class _ProfileState extends State<Profile> {
                       left: 50,
                       right: 50,
                     ),
-                    child: TextField(
-                      enabled: false,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(bottom: 3),
-                        labelText: "Nama",
-                        labelStyle: TextStyle(
-                          fontSize: 17,
-                          fontWeight: regular,
-                          color: kBlackColor,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        hintText: "Tachi",
-                        hintStyle: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semibold,
-                          color: kBlackColor,
-                        ),
-                        suffixIcon: IconButton(
-                          padding: const EdgeInsets.only(left: 25),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_forward_ios_rounded,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            duration: const Duration(milliseconds: 0),
+                            reverseDuration: const Duration(milliseconds: 0),
+                            child: const EditNama(),
                           ),
-                          color: kBlackColor,
+                        );
+                      },
+                      child: TextField(
+                        enabled: false,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.only(bottom: 3),
+                          labelText: "Nama",
+                          labelStyle: TextStyle(
+                            fontSize: 17,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          hintText: "Tachi",
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: semibold,
+                            color: kBlackColor,
+                          ),
+                          suffixIcon: IconButton(
+                            padding: const EdgeInsets.only(left: 25),
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                            ),
+                            color: kBlackColor,
+                          ),
                         ),
                       ),
                     ),
@@ -93,30 +111,43 @@ class _ProfileState extends State<Profile> {
                       left: 50,
                       right: 50,
                     ),
-                    child: TextField(
-                      enabled: false,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(bottom: 3),
-                        labelText: "Email",
-                        labelStyle: TextStyle(
-                          fontSize: 17,
-                          fontWeight: regular,
-                          color: kBlackColor,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        hintText: "nomuramtr75@gmail.com",
-                        hintStyle: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semibold,
-                          color: kBlackColor,
-                        ),
-                        suffixIcon: IconButton(
-                          padding: const EdgeInsets.only(left: 25),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_forward_ios_rounded,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
+                            child: const EditEmail(),
                           ),
-                          color: kBlackColor,
+                        );
+                      },
+                      child: TextField(
+                        enabled: false,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.only(bottom: 3),
+                          labelText: "Email",
+                          labelStyle: TextStyle(
+                            fontSize: 17,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          hintText: "nomuramtr75@gmail.com",
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: semibold,
+                            color: kBlackColor,
+                          ),
+                          suffixIcon: IconButton(
+                            padding: const EdgeInsets.only(left: 25),
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                            ),
+                            color: kBlackColor,
+                          ),
                         ),
                       ),
                     ),
@@ -127,31 +158,44 @@ class _ProfileState extends State<Profile> {
                       left: 50,
                       right: 50,
                     ),
-                    child: TextField(
-                      enabled: false,
-                      obscureText: !passwordVisibility,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(bottom: 3),
-                        labelText: "Kata Sandi",
-                        labelStyle: TextStyle(
-                          fontSize: 17,
-                          fontWeight: regular,
-                          color: kBlackColor,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        hintText: "anjaycuy",
-                        hintStyle: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semibold,
-                          color: kBlackColor,
-                        ),
-                        suffixIcon: IconButton(
-                          padding: const EdgeInsets.only(left: 25),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_forward_ios_rounded,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
+                            child: const ResetPage(),
                           ),
-                          color: kBlackColor,
+                        );
+                      },
+                      child: TextField(
+                        enabled: false,
+                        obscureText: !passwordVisibility,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.only(bottom: 3),
+                          labelText: "Kata Sandi",
+                          labelStyle: TextStyle(
+                            fontSize: 17,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          hintText: "anjaycuy",
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: semibold,
+                            color: kBlackColor,
+                          ),
+                          suffixIcon: IconButton(
+                            padding: const EdgeInsets.only(left: 25),
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                            ),
+                            color: kBlackColor,
+                          ),
                         ),
                       ),
                     ),
@@ -162,30 +206,43 @@ class _ProfileState extends State<Profile> {
                       left: 50,
                       right: 50,
                     ),
-                    child: TextField(
-                      enabled: false,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(bottom: 3),
-                        labelText: "Nomor Handphone",
-                        labelStyle: TextStyle(
-                          fontSize: 17,
-                          fontWeight: regular,
-                          color: kBlackColor,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        hintText: "081213702872",
-                        hintStyle: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semibold,
-                          color: kBlackColor,
-                        ),
-                        suffixIcon: IconButton(
-                          padding: const EdgeInsets.only(left: 25),
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_forward_ios_rounded,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
+                            child: const EditNomor(),
                           ),
-                          color: Colors.black,
+                        );
+                      },
+                      child: TextField(
+                        enabled: false,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.only(bottom: 3),
+                          labelText: "Nomor Handphone",
+                          labelStyle: TextStyle(
+                            fontSize: 17,
+                            fontWeight: regular,
+                            color: kBlackColor,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          hintText: "081213702872",
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: semibold,
+                            color: kBlackColor,
+                          ),
+                          suffixIcon: IconButton(
+                            padding: const EdgeInsets.only(left: 25),
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                            ),
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
@@ -198,9 +255,9 @@ class _ProfileState extends State<Profile> {
                         await Navigator.push(
                           context,
                           PageTransition(
-                            type: PageTransitionType.fade,
-                            duration: const Duration(milliseconds: 0),
-                            reverseDuration: const Duration(milliseconds: 0),
+                            type: PageTransitionType.rightToLeft,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
                             child: const ResetPage(),
                           ),
                         );
@@ -211,7 +268,17 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(top: 10),
                     child: KeluarButton(
                       text: 'Keluar',
-                      onPressed: () {},
+                      onPressed: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            duration: const Duration(milliseconds: 0),
+                            reverseDuration: const Duration(milliseconds: 0),
+                            child: const LoginPage(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
