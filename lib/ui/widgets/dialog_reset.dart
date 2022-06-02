@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/login_page.dart';
 import 'package:gosports/ui/pages/profile.dart';
-import 'package:gosports/ui/widgets/tologin_button.dart';
 import 'package:page_transition/page_transition.dart';
 
 class ResetDialog extends StatelessWidget {
@@ -46,7 +44,7 @@ class ResetDialog extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: 23),
+                  margin: const EdgeInsets.only(top: 23),
                   child: Text(
                     title,
                     style: TextStyle(
@@ -60,7 +58,7 @@ class ResetDialog extends StatelessWidget {
                   height: 16.0,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 33),
+                  padding: const EdgeInsets.symmetric(horizontal: 33),
                   child: Text(
                     description,
                     style: const TextStyle(fontSize: 16.0),

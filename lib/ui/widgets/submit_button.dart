@@ -12,8 +12,6 @@ class SubmitButton extends StatelessWidget {
     const secondaryColor = Color(0xffFF7E1F);
     const accentColor = Color(0xffffffff);
 
-    const double borderRadius = 15;
-
     return Container(
       alignment: AlignmentDirectional.center,
       width: 352,
