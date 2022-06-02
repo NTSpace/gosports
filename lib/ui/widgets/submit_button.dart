@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SimpanButton extends StatelessWidget {
+class SubmitButton extends StatelessWidget {
   final String text;
   final Function() onPressed;
-  const SimpanButton({required this.text, required this.onPressed, Key? key})
+  const SubmitButton({required this.text, required this.onPressed, Key? key})
       : super(key: key);
 
   @override
@@ -16,24 +16,20 @@ class SimpanButton extends StatelessWidget {
 
     return Container(
       alignment: AlignmentDirectional.center,
-      width: 340,
-      height: 45,
+      width: 352,
+      height: 29,
       child: DecoratedBox(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(6),
             gradient:
                 const LinearGradient(colors: [primaryColor, secondaryColor])),
         child: ElevatedButton(
           style: ButtonStyle(
             elevation: MaterialStateProperty.all(0),
             alignment: Alignment.center,
-            padding: MaterialStateProperty.all(
-              const EdgeInsets.only(right: 50, left: 50, top: 15, bottom: 15),
-            ),
             backgroundColor: MaterialStateProperty.all(Colors.transparent),
             shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(borderRadius)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
             ),
           ),
           onPressed: onPressed,
