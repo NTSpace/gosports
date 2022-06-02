@@ -46,10 +46,9 @@ class _PertandinganState extends State<Pertandingan> {
                     padding: const EdgeInsetsDirectional.fromSTEB(10, 55, 0, 0),
                     child: Text(
                       'PERTANDINGAN',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 22,
+                      style: whiteTextStyle.copyWith(
                         fontWeight: bold,
-                        color: kWhiteColor,
+                        fontSize: 22,
                       ),
                     ),
                   ),
@@ -100,13 +99,11 @@ class _PertandinganState extends State<Pertandingan> {
                                         controller: searchController,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelText:
-                                              'Masukkan pencarian anda disini',
-                                          labelStyle: GoogleFonts.montserrat(
-                                            fontSize: 12,
-                                            color: kGreyColor,
-                                            fontWeight: regular,
-                                          ),
+                                          hintText:
+                                              'Masukan pencarian anda disini',
+                                          hintStyle: GoogleFonts.montserrat(
+                                              fontSize: 10,
+                                              color: const Color(0xff9A9DA2)),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: const BorderSide(
                                               color: Color(0x00000000),
@@ -123,7 +120,6 @@ class _PertandinganState extends State<Pertandingan> {
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                           ),
-                                          filled: true,
                                           suffixIcon: Icon(
                                             Icons.search,
                                             color: kGreyColor,
@@ -155,7 +151,7 @@ class _PertandinganState extends State<Pertandingan> {
         ),
       ),
       backgroundColor: kGreyColor,
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
             context: context,
@@ -166,18 +162,10 @@ class _PertandinganState extends State<Pertandingan> {
           );
         },
         backgroundColor: kOrangeColor,
-        icon: const Icon(
-          Icons.add_circle,
+        child: const Icon(
+          Icons.add,
         ),
         elevation: 8,
-        label: Text(
-          'Tambah Turnamen',
-          style: GoogleFonts.poppins(
-            fontSize: 12,
-            fontWeight: regular,
-            color: kWhiteColor,
-          ),
-        ),
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -190,17 +178,36 @@ class _PertandinganState extends State<Pertandingan> {
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 120),
+                Container(
+                  margin: const EdgeInsets.only(top: 122),
                   child: Image.asset(
-                    'assets/bg_pertandingan.png',
-                    width: 254,
-                    height: 300,
+                    'assets/bro.png',
+                    width: 170,
+                    height: 195,
                     fit: BoxFit.contain,
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  child: Text(
+                    'Belum ada pertandingan',
+                    style: blackTextStyle.copyWith(
+                      fontWeight: semibold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(65, 13, 65, 0),
+                  child: Text(
+                    'segera join pertandingan dengan memasukan code yang telah di berikan oleh panitia turnamen ..',
+                    style: darkTextStyle.copyWith(
+                      fontSize: 12,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                )
               ],
             ),
           ),

@@ -61,29 +61,21 @@ class _KodeDialogState extends State<KodeDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 90),
-                child: Text(
-                  widget.title,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: bold,
-                  ),
-                  textAlign: TextAlign.left,
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: bold,
                 ),
               ),
               const SizedBox(
                 height: 10.0,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                ),
-                child: Text(
-                  widget.description,
-                  style: const TextStyle(fontSize: 16.0),
-                  textAlign: TextAlign.left,
-                ),
+              Text(
+                widget.description,
+                style: const TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 1.0,
@@ -95,6 +87,7 @@ class _KodeDialogState extends State<KodeDialog> {
                   top: 15,
                 ),
                 child: TextFormField(
+                  textAlign: TextAlign.center,
                   controller: kodecontroller,
                   obscureText: false,
                   decoration: InputDecoration(
