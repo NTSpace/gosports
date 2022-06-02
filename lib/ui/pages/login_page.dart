@@ -39,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
     double width = size.width;
     return Scaffold(
       backgroundColor: kWhiteColor,
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(66),
         child: AppBar(

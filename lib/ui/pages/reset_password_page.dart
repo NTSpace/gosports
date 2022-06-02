@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/profile.dart';
+import 'package:gosports/ui/widgets/dialog_pass.dart';
 import 'package:page_transition/page_transition.dart';
 
 class ResetPage extends StatefulWidget {
@@ -171,7 +172,15 @@ class _ResetPage extends State<ResetPage> {
               height: 32,
               width: double.infinity,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const CustomDialog(
+                        description:
+                            'Silahkan masuk kembali dengan menggunakan password baru untuk melanjutkan aktivitas',
+                        title: "Password Berhasil Diubah"),
+                  );
+                },
                 style: TextButton.styleFrom(
                   backgroundColor: kOrangeColor,
                   shape: RoundedRectangleBorder(
