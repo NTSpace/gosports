@@ -18,30 +18,34 @@ class LabeledCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        onChanged(!value);
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Text(
-                label,
-                style: GoogleFonts.poppins(
-                    fontSize: 14, fontWeight: semibold, color: kBlackColor),
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: Row(
+        children: <Widget>[
+          InkWell(
+            child: Checkbox(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(6.0),
+                ),
               ),
-            ),
-            Checkbox(
               activeColor: kOrangeColor,
               value: value,
               onChanged: (bool? newValue) {
                 onChanged(newValue!);
               },
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: Text(
+              label,
+              style: darkTextStyle.copyWith(
+                fontWeight: bold,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

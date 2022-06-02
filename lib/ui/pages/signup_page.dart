@@ -114,12 +114,17 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ],
           ),
-          Container(
-            width: 400,
-            height: 2,
-            decoration: const BoxDecoration(
-              color: Colors.black,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                width: 200,
+                height: 2,
+                decoration: BoxDecoration(
+                  color: kOrangeColor,
+                ),
+              ),
+            ],
           ),
           SingleChildScrollView(
             child: Column(
@@ -132,9 +137,9 @@ class _SignupPageState extends State<SignupPage> {
                     padding: const EdgeInsets.only(top: 20),
                     child: Text(
                       'DAFTAR SEKARANG!',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 25,
+                      style: darkTextStyle.copyWith(
                         fontWeight: bold,
+                        fontSize: 24,
                       ),
                     ),
                   ),
@@ -150,40 +155,30 @@ class _SignupPageState extends State<SignupPage> {
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: GoogleFonts.lexendDeca(
-                        fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
+                      labelStyle: darkTextStyle.copyWith(
+                        fontWeight: medium,
                       ),
                       hintText: 'Masukkan email...',
-                      hintStyle: GoogleFonts.lexendDeca(
-                        fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
+                      hintStyle: darkTextStyle.copyWith(
+                        fontWeight: medium,
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: kGreyColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: kBlackColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      filled: true,
-                      fillColor: kGreyColor,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kDarkColor,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       contentPadding: const EdgeInsets.all(24),
                     ),
-                    style: GoogleFonts.lexendDeca(
-                      fontSize: 14,
-                      color: kBlackColor,
-                      fontWeight: regular,
-                    ),
+                    style: darkTextStyle,
                   ),
                 ),
                 Padding(
@@ -197,33 +192,27 @@ class _SignupPageState extends State<SignupPage> {
                     obscureText: !passwordVisibility,
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      labelStyle: GoogleFonts.lexendDeca(
+                      labelStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       hintText: 'Masukkan Password...',
-                      hintStyle: GoogleFonts.lexendDeca(
+                      hintStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kGreyColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kBlackColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      filled: true,
-                      fillColor: kGreyColor,
                       contentPadding: const EdgeInsets.all(24),
                       suffixIcon: InkWell(
                         onTap: () => setState(
@@ -238,11 +227,7 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ),
                     ),
-                    style: GoogleFonts.lexendDeca(
-                      fontSize: 14,
-                      fontWeight: regular,
-                      color: kBlackColor,
-                    ),
+                    style: darkTextStyle,
                   ),
                 ),
                 Padding(
@@ -256,33 +241,27 @@ class _SignupPageState extends State<SignupPage> {
                     obscureText: !cpasswordVisibility,
                     decoration: InputDecoration(
                       labelText: 'Konfirmasi Password',
-                      labelStyle: GoogleFonts.lexendDeca(
+                      labelStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       hintText: 'Masukkan Password...',
-                      hintStyle: GoogleFonts.lexendDeca(
+                      hintStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kGreyColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kBlackColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      filled: true,
-                      fillColor: kGreyColor,
                       contentPadding: const EdgeInsets.all(24),
                       suffixIcon: InkWell(
                         onTap: () => setState(
@@ -297,11 +276,7 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ),
                     ),
-                    style: GoogleFonts.lexendDeca(
-                      fontSize: 14,
-                      fontWeight: regular,
-                      color: kBlackColor,
-                    ),
+                    style: darkTextStyle,
                   ),
                 ),
                 Padding(
@@ -326,13 +301,33 @@ class _SignupPageState extends State<SignupPage> {
                             top: 10,
                             bottom: 10,
                           ),
-                          child: Text(
-                            '-------------------- ATAU  -------------------',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: semibold,
-                                color: kBlackColor),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(right: 8),
+                                width: 138,
+                                height: 1,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff31404B),
+                                ),
+                              ),
+                              Text(
+                                'ATAU',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                    fontSize: 14,
+                                    fontWeight: semibold,
+                                    color: kBlackColor),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(left: 8),
+                                width: 138,
+                                height: 1,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff31404B),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -342,7 +337,7 @@ class _SignupPageState extends State<SignupPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: GoogleSignUp(
-                    text: 'Daftar Melalui Google',
+                    text: 'DAFTAR MELALUI GOOGLE',
                     onPressed: () {
                       print('Button-Login pressed ...');
                     },
@@ -360,10 +355,8 @@ class _SignupPageState extends State<SignupPage> {
                       children: [
                         Text(
                           'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
+                          style: darkTextStyle.copyWith(
                             fontWeight: bold,
-                            color: kBlackColor,
                           ),
                         ),
                       ],

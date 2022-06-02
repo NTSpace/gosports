@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/shared/theme.dart';
 
 class GoogleLogin extends StatelessWidget {
   final String text;
@@ -10,16 +11,16 @@ class GoogleLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     const primaryColor = Color(0xffEDEFF4);
     const secondaryColor = Color(0xffEDEFF4);
-    const accentColor = Color(0xff000000);
 
-    const double borderRadius = 15;
+    const double borderRadius = 4;
 
     return Container(
       alignment: AlignmentDirectional.center,
-      width: 340,
-      height: 50,
+      width: 326,
+      height: 48,
       child: DecoratedBox(
         decoration: BoxDecoration(
+            border: Border.all(width: 1, color: kDarkColor),
             borderRadius: BorderRadius.circular(borderRadius),
             gradient:
                 const LinearGradient(colors: [primaryColor, secondaryColor])),
@@ -27,9 +28,9 @@ class GoogleLogin extends StatelessWidget {
           style: ButtonStyle(
             elevation: MaterialStateProperty.all(0),
             alignment: Alignment.center,
-            padding: MaterialStateProperty.all(const EdgeInsets.only(
-                right: 50, left: 50, top: 15, bottom: 15)),
-            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            padding: MaterialStateProperty.all(
+                const EdgeInsets.only(top: 15, bottom: 15)),
+            backgroundColor: MaterialStateProperty.all(Colors.white),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(borderRadius)),
@@ -52,10 +53,9 @@ class GoogleLogin extends StatelessWidget {
               Text(
                 text,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: accentColor,
+                style: darkTextStyle.copyWith(
+                  fontWeight: bold,
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

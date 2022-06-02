@@ -34,9 +34,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double height = size.height;
-    double width = size.width;
     return Scaffold(
       backgroundColor: kWhiteColor,
       resizeToAvoidBottomInset: false,
@@ -118,12 +115,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ],
           ),
-          Container(
-            width: 400,
-            height: 2,
-            decoration: const BoxDecoration(
-              color: Colors.black,
-            ),
+          Row(
+            children: [
+              Container(
+                width: 200,
+                height: 2,
+                decoration: BoxDecoration(
+                  color: kOrangeColor,
+                ),
+              ),
+            ],
           ),
           SingleChildScrollView(
             child: Column(
@@ -136,14 +137,16 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(top: 20),
                     child: Text(
                       'MASUK',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 25, fontWeight: bold),
+                      style: darkTextStyle.copyWith(
+                        fontWeight: bold,
+                        fontSize: 24,
+                      ),
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                    right: 24,
+                    right: 26,
                     left: 24,
                     top: 15,
                   ),
@@ -152,33 +155,30 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: GoogleFonts.lexendDeca(
+                      floatingLabelStyle: TextStyle(
+                        color: kOrangeColor,
+                      ),
+                      labelStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       hintText: 'Masukkan email...',
-                      hintStyle: GoogleFonts.lexendDeca(
+                      hintStyle: darkTextStyle.copyWith(
                         fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kGreyColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kBlackColor,
+                          color: kOrangeColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      filled: true,
-                      fillColor: kGreyColor,
                       contentPadding: const EdgeInsets.all(24),
                     ),
                     style: GoogleFonts.lexendDeca(
@@ -198,6 +198,9 @@ class _LoginPageState extends State<LoginPage> {
                     controller: passwordControler,
                     obscureText: !passwordVisibility,
                     decoration: InputDecoration(
+                      floatingLabelStyle: TextStyle(
+                        color: kOrangeColor,
+                      ),
                       labelText: 'Password',
                       labelStyle: GoogleFonts.lexendDeca(
                         fontSize: 16,
@@ -212,20 +215,18 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kGreyColor,
+                          color: kDarkColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: kBlackColor,
+                          color: kOrangeColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      filled: true,
-                      fillColor: kGreyColor,
                       contentPadding: const EdgeInsets.all(24),
                       suffixIcon: InkWell(
                         onTap: () => setState(
@@ -279,14 +280,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             );
                           },
-                          child: Text(
-                            'Lupa Password ?',
-                            style: GoogleFonts.poppins(
-                              color: kBlackColor,
-                              fontSize: 14,
-                              fontWeight: semibold,
-                            ),
-                          ),
+                          child: Text('Lupa Password ?', style: darkTextStyle),
                         ),
                       ),
                     ],
@@ -322,13 +316,33 @@ class _LoginPageState extends State<LoginPage> {
                             top: 10,
                             bottom: 10,
                           ),
-                          child: Text(
-                            '-------------------- ATAU  -------------------',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: semibold,
-                                color: kBlackColor),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(right: 8),
+                                width: 138,
+                                height: 1,
+                                decoration: BoxDecoration(
+                                  color: kDarkColor,
+                                ),
+                              ),
+                              Text(
+                                'ATAU',
+                                textAlign: TextAlign.center,
+                                style: darkTextStyle.copyWith(
+                                  fontWeight: bold,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(left: 8),
+                                width: 138,
+                                height: 1,
+                                decoration: BoxDecoration(
+                                  color: kDarkColor,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -338,7 +352,7 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: GoogleLogin(
-                    text: 'Masuk degan Google',
+                    text: 'MASUK MELALUI GOOGLE',
                     onPressed: () {
                       print('Button-Login pressed ...');
                     },
@@ -352,11 +366,8 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Text(
                         'Belum memiliki akun? ',
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          fontWeight: semibold,
-                          color: kBlackColor,
-                        ),
+                        style: darkTextStyle.copyWith(
+                            fontWeight: semibold, fontSize: 16),
                       ),
                       InkWell(
                         onTap: () async {
@@ -372,10 +383,8 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: Text(
                           'Daftar Sekarang',
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
+                          style: orangeTextStyle.copyWith(
                             fontWeight: semibold,
-                            color: kOrangeColor,
                           ),
                         ),
                       ),

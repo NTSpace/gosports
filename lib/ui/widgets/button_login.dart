@@ -16,7 +16,7 @@ class LoginButton extends StatelessWidget {
 
     return Container(
       alignment: AlignmentDirectional.center,
-      width: 340,
+      width: 324,
       height: 50,
       child: DecoratedBox(
         decoration: BoxDecoration(

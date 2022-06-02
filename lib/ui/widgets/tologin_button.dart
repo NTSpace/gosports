@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/shared/theme.dart';
 
 class ToLoginButton extends StatelessWidget {
   final String text;
@@ -10,7 +11,6 @@ class ToLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const primaryColor = Color(0xffFF7E1F);
     const secondaryColor = Color(0xffFF7E1F);
-    const accentColor = Color(0xffffffff);
 
     const double borderRadius = 15;
 
@@ -41,10 +41,8 @@ class ToLoginButton extends StatelessWidget {
               Text(
                 text,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: accentColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                style: whiteTextStyle.copyWith(
+                  fontWeight: bold,
                 ),
               ),
             ],
