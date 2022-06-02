@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/ui/pages/profile.dart';
-import 'ui/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
