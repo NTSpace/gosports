@@ -39,6 +39,7 @@ class _SignupPageState extends State<SignupPage> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(66),
           child: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: kOrangeColor,
             flexibleSpace: Center(
               child: Column(
@@ -103,7 +104,7 @@ class _SignupPageState extends State<SignupPage> {
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(
-                      color: kGreyColor,
+                      color: kWhiteColor,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -127,7 +128,7 @@ class _SignupPageState extends State<SignupPage> {
                   child: Container(
                     height: 1,
                     decoration: BoxDecoration(
-                      color: kDarkColor,
+                      color: kGreyColor,
                     ),
                   ),
                 ),
@@ -153,7 +154,7 @@ class _SignupPageState extends State<SignupPage> {
                       padding: const EdgeInsets.only(top: 20),
                       child: Text(
                         'DAFTAR SEKARANG!',
-                        style: darkTextStyle.copyWith(
+                        style: greyTextStyle.copyWith(
                           fontWeight: bold,
                           fontSize: 24,
                         ),
@@ -171,11 +172,11 @@ class _SignupPageState extends State<SignupPage> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Email',
-                        labelStyle: darkTextStyle.copyWith(
+                        labelStyle: greyTextStyle.copyWith(
                           fontWeight: medium,
                         ),
                         hintText: 'Masukkan email...',
-                        hintStyle: darkTextStyle.copyWith(
+                        hintStyle: greyTextStyle.copyWith(
                           fontWeight: medium,
                         ),
                         enabledBorder: OutlineInputBorder(
@@ -187,14 +188,14 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         contentPadding: const EdgeInsets.all(24),
                       ),
-                      style: darkTextStyle,
+                      style: greyTextStyle,
                     ),
                   ),
                   Padding(
@@ -208,23 +209,23 @@ class _SignupPageState extends State<SignupPage> {
                       obscureText: !passwordVisibility,
                       decoration: InputDecoration(
                         labelText: 'Password',
-                        labelStyle: darkTextStyle.copyWith(
+                        labelStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         hintText: 'Masukkan Password...',
-                        hintStyle: darkTextStyle.copyWith(
+                        hintStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -243,7 +244,7 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ),
                       ),
-                      style: darkTextStyle,
+                      style: greyTextStyle,
                     ),
                   ),
                   Padding(
@@ -257,23 +258,23 @@ class _SignupPageState extends State<SignupPage> {
                       obscureText: !cpasswordVisibility,
                       decoration: InputDecoration(
                         labelText: 'Konfirmasi Password',
-                        labelStyle: darkTextStyle.copyWith(
+                        labelStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         hintText: 'Masukkan Password...',
-                        hintStyle: darkTextStyle.copyWith(
+                        hintStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -292,7 +293,7 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ),
                       ),
-                      style: darkTextStyle,
+                      style: greyTextStyle,
                     ),
                   ),
                   Padding(
@@ -371,7 +372,7 @@ class _SignupPageState extends State<SignupPage> {
                         children: [
                           Text(
                             'Anda akan menerima email konfirmasi yang berisikan link untuk mengaktifkan akun',
-                            style: darkTextStyle.copyWith(
+                            style: greyTextStyle.copyWith(
                               fontWeight: bold,
                             ),
                           ),

@@ -41,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(66),
           child: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: kOrangeColor,
             flexibleSpace: Center(
               child: Column(
@@ -72,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(
-                      color: kGreyColor,
+                      color: kWhiteColor,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -135,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     height: 1,
                     decoration: BoxDecoration(
-                      color: kDarkColor,
+                      color: kGreyColor,
                     ),
                   ),
                 )
@@ -152,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 20),
                       child: Text(
                         'MASUK',
-                        style: darkTextStyle.copyWith(
+                        style: greyTextStyle.copyWith(
                           fontWeight: bold,
                           fontSize: 24,
                         ),
@@ -173,16 +174,16 @@ class _LoginPageState extends State<LoginPage> {
                         floatingLabelStyle: TextStyle(
                           color: kOrangeColor,
                         ),
-                        labelStyle: darkTextStyle.copyWith(
+                        labelStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         hintText: 'Masukkan email...',
-                        hintStyle: darkTextStyle.copyWith(
+                        hintStyle: greyTextStyle.copyWith(
                           fontSize: 16,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -230,7 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: kDarkColor,
+                            color: kGreyColor,
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -296,7 +297,7 @@ class _LoginPageState extends State<LoginPage> {
                               );
                             },
                             child:
-                                Text('Lupa Password ?', style: darkTextStyle),
+                                Text('Lupa Password ?', style: greyTextStyle),
                           ),
                         ),
                       ],
@@ -339,13 +340,13 @@ class _LoginPageState extends State<LoginPage> {
                                   width: 138,
                                   height: 1,
                                   decoration: BoxDecoration(
-                                    color: kDarkColor,
+                                    color: kGreyColor,
                                   ),
                                 ),
                                 Text(
                                   'ATAU',
                                   textAlign: TextAlign.center,
-                                  style: darkTextStyle.copyWith(
+                                  style: greyTextStyle.copyWith(
                                     fontWeight: bold,
                                     fontSize: 12,
                                   ),
@@ -355,7 +356,7 @@ class _LoginPageState extends State<LoginPage> {
                                   width: 138,
                                   height: 1,
                                   decoration: BoxDecoration(
-                                    color: kDarkColor,
+                                    color: kGreyColor,
                                   ),
                                 ),
                               ],
@@ -382,7 +383,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Text(
                           'Belum memiliki akun? ',
-                          style: darkTextStyle.copyWith(
+                          style: greyTextStyle.copyWith(
                               fontWeight: semibold, fontSize: 16),
                         ),
                         InkWell(

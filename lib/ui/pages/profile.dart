@@ -45,10 +45,9 @@ class _ProfileState extends State<Profile> {
         ),
         title: Text(
           'PROFILE',
-          style: GoogleFonts.montserrat(
-            fontWeight: FontWeight.w700,
+          style: whiteTextStyle.copyWith(
             fontSize: 20,
-            color: Colors.white,
+            fontWeight: bold,
           ),
         ),
       ),
@@ -81,17 +80,13 @@ class _ProfileState extends State<Profile> {
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.only(bottom: 3),
                           labelText: "Nama",
-                          labelStyle: TextStyle(
-                            fontSize: 17,
-                            fontWeight: regular,
-                            color: kBlackColor,
+                          labelStyle: blackTextStyle.copyWith(
+                            fontSize: 12,
                           ),
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           hintText: "Tachi",
-                          hintStyle: TextStyle(
-                            fontSize: 20,
+                          hintStyle: blackTextStyle.copyWith(
                             fontWeight: semibold,
-                            color: kBlackColor,
                           ),
                           suffixIcon: IconButton(
                             padding: const EdgeInsets.only(left: 25),
@@ -128,17 +123,13 @@ class _ProfileState extends State<Profile> {
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.only(bottom: 3),
                           labelText: "Email",
-                          labelStyle: TextStyle(
-                            fontSize: 17,
-                            fontWeight: regular,
-                            color: kBlackColor,
+                          labelStyle: blackTextStyle.copyWith(
+                            fontSize: 12,
                           ),
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           hintText: "nomuramtr75@gmail.com",
-                          hintStyle: TextStyle(
-                            fontSize: 20,
+                          hintStyle: blackTextStyle.copyWith(
                             fontWeight: semibold,
-                            color: kBlackColor,
                           ),
                           suffixIcon: IconButton(
                             padding: const EdgeInsets.only(left: 25),
@@ -176,17 +167,13 @@ class _ProfileState extends State<Profile> {
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.only(bottom: 3),
                           labelText: "Kata Sandi",
-                          labelStyle: TextStyle(
-                            fontSize: 17,
-                            fontWeight: regular,
-                            color: kBlackColor,
+                          labelStyle: blackTextStyle.copyWith(
+                            fontSize: 12,
                           ),
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           hintText: "anjaycuy",
-                          hintStyle: TextStyle(
-                            fontSize: 20,
+                          hintStyle: blackTextStyle.copyWith(
                             fontWeight: semibold,
-                            color: kBlackColor,
                           ),
                           suffixIcon: IconButton(
                             padding: const EdgeInsets.only(left: 25),
@@ -223,17 +210,13 @@ class _ProfileState extends State<Profile> {
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.only(bottom: 3),
                           labelText: "Nomor Handphone",
-                          labelStyle: TextStyle(
-                            fontSize: 17,
-                            fontWeight: regular,
-                            color: kBlackColor,
+                          labelStyle: blackTextStyle.copyWith(
+                            fontSize: 12,
                           ),
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           hintText: "081213702872",
-                          hintStyle: TextStyle(
-                            fontSize: 20,
+                          hintStyle: blackTextStyle.copyWith(
                             fontWeight: semibold,
-                            color: kBlackColor,
                           ),
                           suffixIcon: IconButton(
                             padding: const EdgeInsets.only(left: 25),
@@ -325,12 +308,8 @@ class _ProfileState extends State<Profile> {
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: kOrangeColor,
+              color: kBlackColor,
               shape: BoxShape.circle,
-              border: Border.all(
-                width: 4,
-                color: kWhiteColor,
-              ),
             ),
             child: Icon(
               Icons.camera_alt,

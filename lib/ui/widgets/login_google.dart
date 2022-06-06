@@ -20,7 +20,7 @@ class GoogleLogin extends StatelessWidget {
       height: 48,
       child: DecoratedBox(
         decoration: BoxDecoration(
-            border: Border.all(width: 1, color: kDarkColor),
+            border: Border.all(width: 1, color: kGreyColor),
             borderRadius: BorderRadius.circular(borderRadius),
             gradient:
                 const LinearGradient(colors: [primaryColor, secondaryColor])),
@@ -53,7 +53,7 @@ class GoogleLogin extends StatelessWidget {
               Text(
                 text,
                 textAlign: TextAlign.center,
-                style: darkTextStyle.copyWith(
+                style: greyTextStyle.copyWith(
                   fontWeight: bold,
                   fontSize: 16,
                 ),

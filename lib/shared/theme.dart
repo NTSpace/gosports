@@ -6,10 +6,10 @@ Color kBlackColor = const Color(0xff000000);
 Color kRedColor = const Color(0xfff34141);
 Color kWhiteColor = const Color(0xffFFFFFF);
 Color kTextColor = const Color(0xff31404B);
-Color kGreyColor = const Color(0xffEDEFF4).withOpacity(0.96);
+Color kDarkColor = const Color(0xff292C31);
 Color kOrangeColor = const Color(0xffFF7E1F);
 Color kBlueColor = const Color(0xff0CB2E2);
-Color kDarkColor = const Color(0xff31404B);
+Color kGreyColor = const Color(0xff31404B);
 
 TextStyle blackTextStyle = GoogleFonts.montserrat(
   color: kBlackColor,
@@ -26,7 +26,7 @@ TextStyle mainTextStyle = GoogleFonts.montserrat(
 TextStyle orangeTextStyle = GoogleFonts.montserrat(
   color: kOrangeColor,
 );
-TextStyle darkTextStyle = GoogleFonts.montserrat(
+TextStyle greyTextStyle = GoogleFonts.montserrat(
   color: kDarkColor,
 );
 
