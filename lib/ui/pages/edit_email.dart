@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gosports/models/user_profile.dart';
+import 'package:gosports/ui/widgets/textfield_widget.dart';
+import 'package:gosports/utils/user_preferences.dart';
+import 'package:page_transition/page_transition.dart';
+
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/profile.dart';
 import 'package:gosports/ui/widgets/submit_button.dart';
-import 'package:page_transition/page_transition.dart';
 
 class EditEmail extends StatefulWidget {
-  const EditEmail({Key? key}) : super(key: key);
+  const EditEmail({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<EditEmail> createState() => _EditEmailState();
 }
 
 class _EditEmailState extends State<EditEmail> {
-  late TextEditingController emailNamaControler;
+  late User user;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    emailNamaControler = TextEditingController();
+    user = UserPreferences.getUser();
   }
 
   @override
@@ -71,52 +77,28 @@ class _EditEmailState extends State<EditEmail> {
                     left: 24,
                     top: 29,
                   ),
-                  child: TextFormField(
-                    controller: emailNamaControler,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      labelStyle: GoogleFonts.lexendDeca(
-                        fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
-                      ),
-                      hintText: 'Masukkan email...',
-                      hintStyle: GoogleFonts.montserrat(
-                        fontSize: 16,
-                        fontWeight: regular,
-                        color: const Color.fromARGB(151, 116, 113, 113),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: kBlackColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: kBlackColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      filled: true,
-                      fillColor: kWhiteColor,
-                      contentPadding: const EdgeInsets.all(24),
-                    ),
-                    style: GoogleFonts.montserrat(
-                      fontSize: 14,
-                      color: kBlackColor,
-                      fontWeight: regular,
-                    ),
+                  child: TextFieldWidget(
+                    label: 'Nama',
+                    text: user.email,
+                    onChanged: (email) => user = user.copy(email: email),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 550),
                   child: SubmitButton(
                     text: 'Submit',
-                    onPressed: () {},
+                    onPressed: () {
+                      UserPreferences.setUser(user);
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.leftToRight,
+                          duration: const Duration(milliseconds: 500),
+                          reverseDuration: const Duration(milliseconds: 500),
+                          child: const Profile(),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],

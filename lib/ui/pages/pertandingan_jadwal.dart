@@ -75,9 +75,7 @@ class _PertandinganJadwalState extends State<PertandinganJadwal> {
             ),
           ),
         ),
-        body: Container(
-          child: Container(),
-        ),
+        body: Container(),
       ),
     );
   }
