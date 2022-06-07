@@ -9,7 +9,7 @@ Color kTextColor = const Color(0xff31404B);
 Color kDarkColor = const Color(0xff292C31);
 Color kOrangeColor = const Color(0xffFF7E1F);
 Color kBlueColor = const Color(0xff0CB2E2);
-Color kGreyColor = const Color(0xff31404B);
+Color kGreyColor = const Color(0xffF5F5F5);
 
 TextStyle blackTextStyle = GoogleFonts.montserrat(
   color: kBlackColor,
