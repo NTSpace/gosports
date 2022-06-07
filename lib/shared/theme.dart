@@ -29,6 +29,9 @@ TextStyle orangeTextStyle = GoogleFonts.montserrat(
 TextStyle greyTextStyle = GoogleFonts.montserrat(
   color: kDarkColor,
 );
+TextStyle redTextStyle = GoogleFonts.montserrat(
+  color: kRedColor,
+);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;
