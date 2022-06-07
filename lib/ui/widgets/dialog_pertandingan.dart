@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/widgets/jadwal_pertandingan.dart';
+import 'package:gosports/ui/pages/pertandingan_jadwal.dart';
 import 'package:gosports/ui/widgets/tohasil_button.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -129,7 +129,7 @@ class _KodeDialogState extends State<KodeDialog> {
                         type: PageTransitionType.fade,
                         duration: const Duration(milliseconds: 0),
                         reverseDuration: const Duration(milliseconds: 0),
-                        child: const JadwalPert(),
+                        child: const PertandinganJadwal(),
                       ),
                     );
                   },
