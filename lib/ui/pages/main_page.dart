@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                Icons.production_quantity_limits_sharp,
                 size: 35,
                 color: currentIndex == 2
                     ? kOrangeColor
