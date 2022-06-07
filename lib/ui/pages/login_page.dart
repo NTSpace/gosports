@@ -71,10 +71,15 @@ class _LoginPageState extends State<LoginPage> {
                 Flexible(
                   flex: 1,
                   child: Container(
-                    height: 50,
                     decoration: BoxDecoration(
-                      color: kWhiteColor,
+                      border: Border(
+                        bottom: BorderSide(
+                          color: kOrangeColor,
+                          width: 2,
+                        ),
+                      ),
                     ),
+                    height: 50,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -93,6 +98,12 @@ class _LoginPageState extends State<LoginPage> {
                     height: 50,
                     decoration: BoxDecoration(
                       color: kWhiteColor,
+                      border: Border(
+                        bottom: BorderSide(
+                          color: kGreyColor,
+                          width: 1,
+                        ),
+                      ),
                     ),
                     child: InkWell(
                       onTap: () async {
@@ -119,27 +130,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              children: [
-                Flexible(
-                  child: Container(
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: kOrangeColor,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    height: 1,
-                    decoration: BoxDecoration(
-                      color: kGreyColor,
-                    ),
-                  ),
-                )
               ],
             ),
             SingleChildScrollView(

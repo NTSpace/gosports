@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:page_transition/page_transition.dart';
 
 class PertandinganJadwal extends StatefulWidget {
   const PertandinganJadwal({Key? key}) : super(key: key);
@@ -75,7 +76,67 @@ class _PertandinganJadwalState extends State<PertandinganJadwal> {
             ),
           ),
         ),
-        body: Container(),
+        body: Column(
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 2,
+                          color: kOrangeColor,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'JADWAL',
+                          style: GoogleFonts.montserrat(fontSize: 14),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: kGreyColor,
+                        ),
+                      ),
+                    ),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'HASIL',
+                            style: GoogleFonts.montserrat(fontSize: 14),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
