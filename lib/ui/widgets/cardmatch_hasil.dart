@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
 
-class MatchLiveCard extends StatelessWidget {
-  final String logo1, logo2, namatim1, namatim2, status;
+class MatchCardHasil extends StatelessWidget {
+  final String logo1, logo2, namatim1, namatim2, status, skor1, skor2;
   final VoidCallback onClicked;
 
-  const MatchLiveCard({
+  const MatchCardHasil({
     Key? key,
     required this.status,
     required this.logo1,
@@ -13,6 +13,8 @@ class MatchLiveCard extends StatelessWidget {
     required this.namatim1,
     required this.namatim2,
     required this.onClicked,
+    required this.skor1,
+    required this.skor2,
   }) : super(key: key);
 
   @override
@@ -31,25 +33,10 @@ class MatchLiveCard extends StatelessWidget {
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      status,
-                      style: redTextStyle.copyWith(
-                        fontSize: 10,
-                        fontWeight: semibold,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: const Icon(
-                        Icons.circle,
-                        size: 10,
-                        color: Color(0xfff34141),
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  status,
+                  style: orangeTextStyle.copyWith(
+                      fontSize: 10, fontWeight: semibold),
                 ),
               ),
               Container(
@@ -85,13 +72,29 @@ class MatchLiveCard extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Text(
-                  'VS',
-                  style: blackTextStyle.copyWith(
+                  skor1,
+                  style: orangeTextStyle.copyWith(
                     fontSize: 10,
                     fontWeight: bold,
                   ),
                   textAlign: TextAlign.center,
                 ),
+              ),
+              Text(
+                '-',
+                style: blackTextStyle.copyWith(
+                  fontSize: 10,
+                  fontWeight: bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                skor2,
+                style: greyTextStyle.copyWith(
+                  fontSize: 10,
+                  fontWeight: bold,
+                ),
+                textAlign: TextAlign.center,
               ),
               Container(
                 width: 32,

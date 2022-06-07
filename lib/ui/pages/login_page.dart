@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gosports/ui/pages/pertandingan.dart';
+import 'package:gosports/ui/pages/main_page.dart';
 import 'package:gosports/ui/widgets/ingat_saya.dart';
 import 'package:gosports/ui/pages/lupa_password.dart';
 import 'package:gosports/ui/pages/signup_page.dart';
@@ -304,7 +304,7 @@ class _LoginPageState extends State<LoginPage> {
                             type: PageTransitionType.fade,
                             duration: const Duration(milliseconds: 0),
                             reverseDuration: const Duration(milliseconds: 0),
-                            child: const Pertandingan(),
+                            child: const MainPage(),
                           ),
                         );
                       },
