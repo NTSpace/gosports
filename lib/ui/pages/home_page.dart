@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                           user.nama,
                           style: whiteTextStyle.copyWith(
                             fontSize: 20,
-                            fontWeight: regular,
+                            fontWeight: semibold,
                             color: kOrangeColor,
                           ),
                         ),
