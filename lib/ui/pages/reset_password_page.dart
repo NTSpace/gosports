@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/profile.dart';
 import 'package:gosports/ui/widgets/dialog_reset.dart';
-import 'package:page_transition/page_transition.dart';
 
 class ResetPage extends StatefulWidget {
   const ResetPage({Key? key}) : super(key: key);
@@ -24,15 +22,7 @@ class _ResetPage extends State<ResetPage> {
           elevation: 0,
           leading: IconButton(
             onPressed: () async {
-              await Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.leftToRight,
-                  duration: const Duration(milliseconds: 500),
-                  reverseDuration: const Duration(milliseconds: 500),
-                  child: const Profile(),
-                ),
-              );
+              Navigator.pop(context);
             },
             icon: Image.asset(
               'assets/back_icon.png',

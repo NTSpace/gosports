@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/models/user_profile.dart';
+import 'package:gosports/ui/pages/main_page.dart';
 import 'package:gosports/ui/widgets/textfield_widget.dart';
 import 'package:gosports/utils/user_preferences.dart';
-import 'package:page_transition/page_transition.dart';
 
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/profile.dart';
 import 'package:gosports/ui/widgets/submit_button.dart';
+import 'package:page_transition/page_transition.dart';
 
 class EditNomor extends StatefulWidget {
   const EditNomor({
@@ -40,15 +40,7 @@ class _EditNomorState extends State<EditNomor> {
         elevation: 10,
         leading: IconButton(
             onPressed: () async {
-              await Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.leftToRight,
-                  duration: const Duration(milliseconds: 500),
-                  reverseDuration: const Duration(milliseconds: 500),
-                  child: const Profile(),
-                ),
-              );
+              Navigator.pop(context);
             },
             icon: Image.asset(
               'assets/back_icon.png',
@@ -86,15 +78,15 @@ class _EditNomorState extends State<EditNomor> {
                   padding: const EdgeInsets.only(top: 550),
                   child: SubmitButton(
                     text: 'Submit',
-                    onPressed: () {
+                    onPressed: () async {
                       UserPreferences.setUser(user);
-                      Navigator.push(
+                      await Navigator.push(
                         context,
                         PageTransition(
-                          type: PageTransitionType.leftToRight,
+                          type: PageTransitionType.rightToLeft,
                           duration: const Duration(milliseconds: 500),
                           reverseDuration: const Duration(milliseconds: 500),
-                          child: const Profile(),
+                          child: const MainPage(),
                         ),
                       );
                     },

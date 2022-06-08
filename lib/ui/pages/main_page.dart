@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
                 width: 24,
                 color: currentIndex == 0
                     ? kOrangeColor
-                    : Color.fromRGBO(0, 0, 0, 0.38),
+                    : const Color.fromRGBO(0, 0, 0, 0.38),
               ),
               label: 'Home',
             ),
@@ -41,17 +41,17 @@ class _MainPageState extends State<MainPage> {
                 width: 24,
                 color: currentIndex == 1
                     ? kOrangeColor
-                    : Color.fromRGBO(0, 0, 0, 0.38),
+                    : const Color.fromRGBO(0, 0, 0, 0.38),
               ),
               label: 'Pertandingan',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.production_quantity_limits_sharp,
+                Icons.person,
                 size: 35,
                 color: currentIndex == 2
                     ? kOrangeColor
-                    : Color.fromRGBO(0, 0, 0, 0.38),
+                    : const Color.fromRGBO(0, 0, 0, 0.38),
               ),
               label: 'Profile',
             )

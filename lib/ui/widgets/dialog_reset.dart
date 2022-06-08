@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/profile.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:gosports/ui/pages/main_page.dart';
 
 class ResetDialog extends StatelessWidget {
   final String title, description;
@@ -70,14 +69,8 @@ class ResetDialog extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.fade,
-                            duration: const Duration(milliseconds: 0),
-                            reverseDuration: const Duration(milliseconds: 0),
-                            child: const Profile(),
-                          ));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const MainPage()));
                     },
                     child: Text(
                       'OK',
