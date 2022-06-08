@@ -29,6 +29,7 @@ class MatchLiveCardHasil extends StatelessWidget {
           width: double.infinity,
           height: 45,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(

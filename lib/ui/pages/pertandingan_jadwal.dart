@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/detaillineup.dart';
+import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/pages/pertandingan_hasil.dart';
 import 'package:gosports/ui/widgets/cardlivematch.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';

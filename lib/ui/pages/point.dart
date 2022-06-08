@@ -16,7 +16,7 @@ class _PointPageState extends State<PointPage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            ScoreBoard(),
+            const ScoreBoard(),
             Row(
               children: [Text('anjay')],
             )

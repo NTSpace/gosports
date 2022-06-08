@@ -1,7 +1,7 @@
 import 'package:gosports/models/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/detaillineup.dart';
+import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
 import 'package:gosports/utils/user_preferences.dart';
