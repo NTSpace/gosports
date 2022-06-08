@@ -1,10 +1,12 @@
 import 'package:gosports/models/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/detaillineup.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
 import 'package:gosports/utils/user_preferences.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -183,7 +185,16 @@ class _HomePageState extends State<HomePage> {
                       logo2: 'assets/kingsTim.png',
                       namatim1: 'ROCKETS',
                       namatim2: 'KINGS',
-                      onClicked: () {}),
+                      onClicked: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.fade,
+                              duration: const Duration(milliseconds: 0),
+                              reverseDuration: const Duration(milliseconds: 0),
+                              child: const DetailLineup()),
+                        );
+                      }),
                   MatchCard(
                       status: '14:30',
                       logo1: 'assets/miamiTim.png',

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
 
-class MatchCardHasil extends StatelessWidget {
+class MatchLiveCardHasil extends StatelessWidget {
   final String logo1, logo2, namatim1, namatim2, status, skor1, skor2;
   final VoidCallback onClicked;
 
-  const MatchCardHasil({
+  const MatchLiveCardHasil({
     Key? key,
     required this.status,
     required this.logo1,
