@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/widgets/cardpemain.dart';
-import 'package:gosports/ui/widgets/cardtim2.dart';
+import 'package:gosports/ui/widgets/cardtim.dart';
 import 'package:page_transition/page_transition.dart';
 
 class DetailLineup2 extends StatefulWidget {
@@ -181,7 +181,7 @@ class _DetailLineup2State extends State<DetailLineup2> {
                   const SizedBox(
                     height: 24,
                   ),
-                  CardTim2(
+                  CardTim(
                     logo1: 'assets/rocketsTim.png',
                     namatim1: 'Rockets',
                     namatim2: 'Kings',
@@ -196,6 +196,11 @@ class _DetailLineup2State extends State<DetailLineup2> {
                             child: const DetailLineup()),
                       );
                     },
+                    opacity: 0.5,
+                    opacity2: 1.0,
+                    color1: Colors.grey,
+                    color2: kBlackColor,
+                    onClicked2: () {},
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 25),

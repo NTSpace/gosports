@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/ui/pages/lineup.dart';
-import 'package:gosports/ui/pages/pont2.dart';
+import 'package:gosports/ui/pages/point.dart';
 import 'package:gosports/ui/widgets/scoreboard.dart';
 import 'package:gosports/ui/widgets/simpan_button.dart';
 import 'package:gosports/ui/widgets/teamvs.dart';
 import 'package:page_transition/page_transition.dart';
 
-class PointPage extends StatefulWidget {
-  const PointPage({Key? key}) : super(key: key);
+class Point2Page extends StatefulWidget {
+  const Point2Page({Key? key}) : super(key: key);
 
   @override
-  State<PointPage> createState() => _PointPageState();
+  State<Point2Page> createState() => _Point2PageState();
 }
 
-class _PointPageState extends State<PointPage> {
+class _Point2PageState extends State<Point2Page> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,19 +30,19 @@ class _PointPageState extends State<PointPage> {
                 TeamVs(
                   logo1: 'assets/warriorsTim.png',
                   logo2: 'assets/grizzliesTim.png',
-                  onClicked1: () {},
-                  opacity: 1.0,
-                  opacity2: 0.5,
-                  onClicked2: () async {
+                  onClicked1: () async {
                     await Navigator.push(
                       context,
                       PageTransition(
                           type: PageTransitionType.fade,
                           duration: const Duration(milliseconds: 0),
                           reverseDuration: const Duration(milliseconds: 0),
-                          child: const Point2Page()),
+                          child: const PointPage()),
                     );
                   },
+                  opacity: 0.5,
+                  opacity2: 1.0,
+                  onClicked2: () {},
                 ),
               ],
             ),

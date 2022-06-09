@@ -23,7 +23,7 @@ class CardTim2 extends StatelessWidget {
         width: double.infinity,
         height: 49,
         decoration: const BoxDecoration(
-          color: Color(0xffF1F1F1),
+          color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(5),
             topLeft: Radius.circular(5),
