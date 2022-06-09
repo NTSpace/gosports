@@ -65,7 +65,7 @@ class CardTim2 extends StatelessWidget {
                         namatim1,
                         style: GoogleFonts.montserrat(
                           fontSize: 10,
-                          fontWeight: bold,
+                          fontWeight: semibold,
                           color: Colors.grey,
                         ),
                         textAlign: TextAlign.end,

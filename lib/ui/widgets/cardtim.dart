@@ -40,36 +40,35 @@ class CardTim extends StatelessWidget {
                   color: Color(0xffFF7E1F),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(6))),
             ),
-            InkWell(
-              onTap: () {},
-              child: SizedBox(
-                height: 50,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      margin: const EdgeInsets.only(left: 17),
-                      width: 32,
-                      height: 32,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(logo1), fit: BoxFit.cover),
+            SizedBox(
+              height: 50,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.only(left: 17),
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(logo1),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 17),
-                      child: Text(
-                        namatim1,
-                        style: blackTextStyle.copyWith(
-                          fontWeight: semibold,
-                          fontSize: 10,
-                        ),
-                        textAlign: TextAlign.start,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 17),
+                    child: Text(
+                      namatim1,
+                      style: blackTextStyle.copyWith(
+                        fontWeight: semibold,
+                        fontSize: 10,
                       ),
+                      textAlign: TextAlign.end,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             InkWell(
@@ -86,14 +85,14 @@ class CardTim extends StatelessWidget {
                         namatim2,
                         style: GoogleFonts.montserrat(
                           fontSize: 10,
-                          fontWeight: bold,
+                          fontWeight: semibold,
                           color: Colors.grey,
                         ),
                         textAlign: TextAlign.end,
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 17),
+                      margin: const EdgeInsets.only(left: 17),
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
