@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/pertandingan_jadwal.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ScoreBoard extends StatefulWidget {
   const ScoreBoard({Key? key}) : super(key: key);
@@ -27,9 +29,22 @@ class _ScoreBoardState extends State<ScoreBoard> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset(
-                  'assets/back_icon.png',
-                  width: 8,
+                InkWell(
+                  child: Image.asset(
+                    'assets/back_icon.png',
+                    width: 8,
+                  ),
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PertandinganJadwal(),
+                      ),
+                    );
+                  },
                 ),
                 Text(
                   'GSW VS MEM',
