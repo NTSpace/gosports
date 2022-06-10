@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/widgets/skorpoin.dart';
+import 'package:page_transition/page_transition.dart';
 
 class DialogShot extends StatefulWidget {
   const DialogShot({Key? key}) : super(key: key);
@@ -48,7 +50,9 @@ class _DialogShotState extends State<DialogShot> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 6),
@@ -65,7 +69,17 @@ class _DialogShotState extends State<DialogShot> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.fade,
+                              duration: const Duration(milliseconds: 0),
+                              reverseDuration: const Duration(milliseconds: 0),
+                              child: const SkorPoin(),
+                            ),
+                          );
+                        },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 6),
