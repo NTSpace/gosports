@@ -100,7 +100,7 @@ class CardTim extends StatelessWidget {
                           fontWeight: semibold,
                           color: color2,
                         ),
-                        textAlign: TextAlign.end,
+                        textAlign: TextAlign.start,
                       ),
                     ),
                     Container(
