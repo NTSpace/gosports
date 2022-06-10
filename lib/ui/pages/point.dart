@@ -37,10 +37,11 @@ class _PointPageState extends State<PointPage> {
                     await Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade,
-                          duration: const Duration(milliseconds: 0),
-                          reverseDuration: const Duration(milliseconds: 0),
-                          child: const Point2Page()),
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const Point2Page(),
+                      ),
                     );
                   },
                 ),

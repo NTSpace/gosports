@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/ui/pages/lineup_pemain.dart';
+import 'package:gosports/ui/pages/pergantian.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Lineup extends StatefulWidget {
   const Lineup({Key? key}) : super(key: key);
@@ -25,17 +27,47 @@ class _LineupState extends State<Lineup> {
                 LineUpPemain(
                   nomorpg: '00',
                   namapemain: 'Nama Pemain',
-                  onClicked: () {},
+                  onClicked: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PergantianPage(),
+                      ),
+                    );
+                  },
                 ),
                 LineUpPemain(
                   nomorpg: '00',
                   namapemain: 'Nama Pemain',
-                  onClicked: () {},
+                  onClicked: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PergantianPage(),
+                      ),
+                    );
+                  },
                 ),
                 LineUpPemain(
                   nomorpg: '00',
                   namapemain: 'Nama Pemain',
-                  onClicked: () {},
+                  onClicked: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PergantianPage(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -47,7 +79,17 @@ class _LineupState extends State<Lineup> {
                 LineUpPemain(
                   nomorpg: '00',
                   namapemain: 'Nama Pemain',
-                  onClicked: () {},
+                  onClicked: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PergantianPage(),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(
                   width: 16,
@@ -55,7 +97,17 @@ class _LineupState extends State<Lineup> {
                 LineUpPemain(
                   nomorpg: '00',
                   namapemain: 'Nama Pemain',
-                  onClicked: () {},
+                  onClicked: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 0),
+                        reverseDuration: const Duration(milliseconds: 0),
+                        child: const PergantianPage(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
