@@ -186,7 +186,12 @@ class _DetailLineupState extends State<DetailLineup> {
                     namatim1: 'Rockets',
                     namatim2: 'Kings',
                     logo2: 'assets/kingsTim.png',
-                    onClicked: () async {
+                    onClicked: () {},
+                    opacity: 1.0,
+                    opacity2: 0.5,
+                    color1: kBlackColor,
+                    color2: Colors.grey,
+                    onClicked2: () async {
                       await Navigator.push(
                         context,
                         PageTransition(

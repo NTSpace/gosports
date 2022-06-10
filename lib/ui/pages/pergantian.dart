@@ -32,7 +32,9 @@ class _PergantianPageState extends State<PergantianPage> {
                 'assets/back_icon.png',
                 width: 12,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
             title: Text(
               'STARTING TIM',

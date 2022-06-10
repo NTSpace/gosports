@@ -4,7 +4,9 @@ import 'package:gosports/shared/theme.dart';
 
 class CardTim extends StatelessWidget {
   final String logo1, namatim1, namatim2, logo2;
-  final VoidCallback onClicked;
+  final VoidCallback onClicked, onClicked2;
+  final double opacity, opacity2;
+  final Color color1, color2;
 
   const CardTim({
     Key? key,
@@ -13,6 +15,11 @@ class CardTim extends StatelessWidget {
     required this.namatim2,
     required this.logo2,
     required this.onClicked,
+    required this.opacity,
+    required this.opacity2,
+    required this.color1,
+    required this.color2,
+    required this.onClicked2,
   }) : super(key: key);
 
   @override
@@ -23,7 +30,7 @@ class CardTim extends StatelessWidget {
         width: double.infinity,
         height: 49,
         decoration: const BoxDecoration(
-          color: Color(0xffF1F1F1),
+          color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(5),
             topLeft: Radius.circular(5),
@@ -40,39 +47,44 @@ class CardTim extends StatelessWidget {
                   color: Color(0xffFF7E1F),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(6))),
             ),
-            SizedBox(
-              height: 50,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(left: 17),
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(logo1),
-                        fit: BoxFit.cover,
+            InkWell(
+              onTap: onClicked,
+              child: SizedBox(
+                height: 50,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: const EdgeInsets.only(left: 17),
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(logo1),
+                          fit: BoxFit.cover,
+                          opacity: opacity,
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 17),
-                    child: Text(
-                      namatim1,
-                      style: blackTextStyle.copyWith(
-                        fontWeight: semibold,
-                        fontSize: 10,
+                    Container(
+                      margin: const EdgeInsets.only(left: 17),
+                      child: Text(
+                        namatim1,
+                        style: blackTextStyle.copyWith(
+                          fontWeight: semibold,
+                          fontSize: 10,
+                          color: color1,
+                        ),
+                        textAlign: TextAlign.end,
                       ),
-                      textAlign: TextAlign.end,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             InkWell(
-              onTap: onClicked,
+              onTap: onClicked2,
               child: SizedBox(
                 height: 50,
                 child: Row(
@@ -86,9 +98,9 @@ class CardTim extends StatelessWidget {
                         style: GoogleFonts.montserrat(
                           fontSize: 10,
                           fontWeight: semibold,
-                          color: Colors.grey,
+                          color: color2,
                         ),
-                        textAlign: TextAlign.end,
+                        textAlign: TextAlign.start,
                       ),
                     ),
                     Container(
@@ -99,7 +111,7 @@ class CardTim extends StatelessWidget {
                         image: DecorationImage(
                             image: AssetImage(logo2),
                             fit: BoxFit.cover,
-                            opacity: 0.5),
+                            opacity: opacity2),
                       ),
                     ),
                   ],

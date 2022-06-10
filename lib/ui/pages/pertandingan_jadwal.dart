@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/pages/pertandingan_hasil.dart';
+import 'package:gosports/ui/pages/point.dart';
 import 'package:gosports/ui/widgets/cardlivematch.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
@@ -159,7 +160,16 @@ class _PertandinganJadwalState extends State<PertandinganJadwal> {
               logo2: 'assets/grizzliesTim.png',
               namatim1: 'WARRIORS',
               namatim2: 'GRIZZLIES',
-              onClicked: () {},
+              onClicked: () async {
+                await Navigator.push(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.fade,
+                      duration: const Duration(milliseconds: 0),
+                      reverseDuration: const Duration(milliseconds: 0),
+                      child: const PointPage()),
+                );
+              },
             ),
             MatchLiveCard(
               status: 'Live',
