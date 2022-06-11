@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/pertandingan_jadwal.dart';
+import 'package:gosports/ui/pages/jadwal_hasil.dart';
 import 'package:page_transition/page_transition.dart';
 
 class ScoreBoard extends StatefulWidget {
@@ -41,7 +41,7 @@ class _ScoreBoardState extends State<ScoreBoard> {
                         type: PageTransitionType.fade,
                         duration: const Duration(milliseconds: 0),
                         reverseDuration: const Duration(milliseconds: 0),
-                        child: const PertandinganJadwal(),
+                        child: const JadwalHasil(),
                       ),
                     );
                   },
