@@ -92,7 +92,7 @@ class CardTim extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Container(
-                      margin: const EdgeInsets.only(left: 150),
+                      margin: const EdgeInsets.only(left: 130),
                       child: Text(
                         namatim2,
                         style: GoogleFonts.montserrat(
