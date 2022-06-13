@@ -40,7 +40,7 @@ class _ScoringPageState extends State<ScoringPage>
               Container(
                 color: kWhiteColor,
                 child: TabBar(
-                  labelColor: Colors.black,
+                  labelColor: kOrangeColor,
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: kOrangeColor,
                   controller: _tabController,
@@ -247,7 +247,7 @@ class _ScoringPageState extends State<ScoringPage>
                           ),
                           child: TabBar(
                             indicatorWeight: 2,
-                            labelColor: Colors.black,
+                            labelColor: kOrangeColor,
                             unselectedLabelColor: Colors.grey,
                             indicatorColor: kOrangeColor,
                             controller: _pbpController,

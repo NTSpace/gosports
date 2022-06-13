@@ -85,7 +85,7 @@ class _JadwalHasilState extends State<JadwalHasil>
             Container(
               color: kWhiteColor,
               child: TabBar(
-                labelColor: Colors.black,
+                labelColor: kOrangeColor,
                 indicatorWeight: 2,
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: kOrangeColor,
