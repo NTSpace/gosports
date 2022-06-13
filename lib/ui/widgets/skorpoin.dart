@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/dua_poinrebound.dart';
+import 'package:gosports/ui/pages/satu_poinrebound.dart';
 import 'package:gosports/ui/widgets/appbarpoint.dart';
 import 'package:gosports/ui/widgets/logopoint.dart';
+import 'package:gosports/ui/pages/tiga_poin.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SkorPoin extends StatefulWidget {
   const SkorPoin({Key? key}) : super(key: key);
@@ -29,6 +33,17 @@ class _SkorPoinState extends State<SkorPoin> {
                 height: 36,
               ),
               InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      duration: const Duration(milliseconds: 500),
+                      reverseDuration: const Duration(milliseconds: 500),
+                      child: const TigaPoin(),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 27),
                   height: 98,
@@ -43,6 +58,17 @@ class _SkorPoinState extends State<SkorPoin> {
                 ),
               ),
               InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      duration: const Duration(milliseconds: 500),
+                      reverseDuration: const Duration(milliseconds: 500),
+                      child: const DuaPoin(),
+                    ),
+                  );
+                },
                 child: Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 27, vertical: 27),
@@ -58,6 +84,17 @@ class _SkorPoinState extends State<SkorPoin> {
                 ),
               ),
               InkWell(
+                onTap: () async {
+                  await Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      duration: const Duration(milliseconds: 500),
+                      reverseDuration: const Duration(milliseconds: 500),
+                      child: const SatuPoin(),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 27),
                   height: 98,

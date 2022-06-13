@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gosports/shared/theme.dart';
 
 class CardGanti extends StatefulWidget {
@@ -28,10 +26,10 @@ class _CardGantiState extends State<CardGanti> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 17, vertical: 13),
+              padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 13),
               decoration: BoxDecoration(
                   color: kOrangeColor,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(5),
                     topLeft: Radius.circular(5),
                   )),
@@ -44,7 +42,7 @@ class _CardGantiState extends State<CardGanti> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 10, 150, 0),
+              margin: const EdgeInsets.fromLTRB(0, 10, 150, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

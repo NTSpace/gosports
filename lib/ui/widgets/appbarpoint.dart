@@ -8,10 +8,11 @@ class AppBarPoint extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: kBlackColor,
       title: Center(
         child: Container(
-          margin: EdgeInsets.only(left: 40),
+          margin: const EdgeInsets.only(left: 40),
           child: Text(
             poin,
             style: whiteTextStyle.copyWith(fontWeight: bold, fontSize: 20),

@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gosports/shared/theme.dart';
 
 class PemainKeluar extends StatefulWidget {
@@ -15,8 +13,8 @@ class _PemainKeluarState extends State<PemainKeluar> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.only(top: 16, right: 25.5, left: 25.5),
-      padding: EdgeInsets.symmetric(vertical: 12.5),
+      margin: const EdgeInsets.only(top: 16, right: 25.5, left: 25.5),
+      padding: const EdgeInsets.symmetric(vertical: 12.5),
       decoration: BoxDecoration(
         color: kOrangeColor,
         borderRadius: BorderRadius.circular(5),
@@ -32,7 +30,7 @@ class _PemainKeluarState extends State<PemainKeluar> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 12),
+            margin: const EdgeInsets.only(top: 12),
             child: Text(
               'GEORGE HILL',
               style: whiteTextStyle.copyWith(

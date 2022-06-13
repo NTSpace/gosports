@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/cardnamatim.dart';
+import 'package:gosports/ui/pages/fouls.dart';
 import 'package:gosports/ui/pages/lineup.dart';
 import 'package:gosports/ui/pages/pont2.dart';
+import 'package:gosports/ui/pages/turnover.dart';
 import 'package:gosports/ui/widgets/dialog_shot.dart';
 import 'package:gosports/ui/widgets/playbyplay_card.dart';
 import 'package:gosports/ui/widgets/scoreboard.dart';
@@ -131,7 +133,12 @@ class _ScoringPageState extends State<ScoringPage>
                                       fontSize: 24,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Fouls(),
+                                    );
+                                  },
                                 ),
                               ),
                               Container(
@@ -149,7 +156,12 @@ class _ScoringPageState extends State<ScoringPage>
                                       fontSize: 24,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Fouls(),
+                                    );
+                                  },
                                 ),
                               )
                             ],
@@ -175,7 +187,12 @@ class _ScoringPageState extends State<ScoringPage>
                                       fontSize: 24,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Turnover(),
+                                    );
+                                  },
                                 ),
                               ),
                               Container(
@@ -292,7 +309,7 @@ class _ScoringPageState extends State<ScoringPage>
                                             fontSize: 10,
                                           ),
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 130,
                                           child: Text(
                                             'DESKRIPSI',
@@ -380,7 +397,7 @@ class _ScoringPageState extends State<ScoringPage>
                                             fontSize: 10,
                                           ),
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 130,
                                           child: Text(
                                             'DESKRIPSI',
@@ -468,7 +485,7 @@ class _ScoringPageState extends State<ScoringPage>
                                             fontSize: 10,
                                           ),
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 130,
                                           child: Text(
                                             'DESKRIPSI',
@@ -556,7 +573,7 @@ class _ScoringPageState extends State<ScoringPage>
                                             fontSize: 10,
                                           ),
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 130,
                                           child: Text(
                                             'DESKRIPSI',

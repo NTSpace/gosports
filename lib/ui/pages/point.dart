@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/ui/pages/lineup.dart';
 import 'package:gosports/ui/pages/pont2.dart';
+import 'package:gosports/ui/pages/scoring.dart';
 import 'package:gosports/ui/widgets/scoreboard.dart';
 import 'package:gosports/ui/widgets/simpan_button.dart';
 import 'package:gosports/ui/widgets/teamvs.dart';
@@ -55,7 +56,17 @@ class _PointPageState extends State<PointPage> {
               padding: const EdgeInsets.only(top: 68),
               child: SimpanButton(
                 text: 'MULAI PERTANDINGAN',
-                onPressed: () {},
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      duration: const Duration(milliseconds: 0),
+                      reverseDuration: const Duration(milliseconds: 0),
+                      child: const ScoringPage(),
+                    ),
+                  );
+                },
               ),
             ),
           ],

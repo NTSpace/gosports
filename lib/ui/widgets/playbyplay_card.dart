@@ -39,7 +39,7 @@ class PlaybyplayCard extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Container(
+                SizedBox(
                   width: 210,
                   child: Row(
                     children: [

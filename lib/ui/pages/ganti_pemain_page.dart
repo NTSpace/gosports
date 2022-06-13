@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/widgets/pemain_keluar.dart';
 import 'package:gosports/ui/widgets/pemain_masuk.dart';
@@ -42,7 +40,7 @@ class _GantiPemainState extends State<GantiPemain> {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 16, left: 134, right: 134),
+                  margin: const EdgeInsets.only(top: 16, left: 134, right: 134),
                   child: Text(
                     'Pemain Keluar',
                     style: greyTextStyle.copyWith(
@@ -51,9 +49,9 @@ class _GantiPemainState extends State<GantiPemain> {
                     ),
                   ),
                 ),
-                PemainKeluar(),
+                const PemainKeluar(),
                 Container(
-                  margin: EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.only(top: 16),
                   child: Text(
                     'Pemain Masuk',
                     style: greyTextStyle.copyWith(
@@ -62,32 +60,33 @@ class _GantiPemainState extends State<GantiPemain> {
                     ),
                   ),
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
-                CardGanti(
+                const CardGanti(
                   nama: 'Rahmat Tri',
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 16, horizontal: 25),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 25),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: kOrangeColor,

@@ -28,6 +28,7 @@ class _JadwalHasilState extends State<JadwalHasil>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: kDarkColor,
           title: Container(
@@ -90,7 +91,7 @@ class _JadwalHasilState extends State<JadwalHasil>
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: kOrangeColor,
                 controller: _tabController,
-                tabs: [
+                tabs: const [
                   Tab(
                     text: 'Jadwal',
                   ),
@@ -100,12 +101,12 @@ class _JadwalHasilState extends State<JadwalHasil>
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               // margin: EdgeInsets.only(top: 25),
               height: MediaQuery.of(context).size.height * 0.40,
               child: TabBarView(
                 controller: _tabController,
-                children: [
+                children: const [
                   PertandinganJadwal(),
                   PertandinganHasil(),
                 ],
