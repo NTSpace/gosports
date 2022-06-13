@@ -32,7 +32,8 @@ class _ScoreBoardState extends State<ScoreBoard> {
                 InkWell(
                   child: Image.asset(
                     'assets/back_icon.png',
-                    width: 8,
+                    width: 12,
+                    height: 12,
                   ),
                   onTap: () async {
                     await Navigator.push(

@@ -34,7 +34,7 @@ class MatchLiveCardHasil extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                margin: const EdgeInsets.only(left: 4.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,7 +46,7 @@ class MatchLiveCardHasil extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                      margin: const EdgeInsets.only(left: 4.0),
                       child: const Icon(
                         Icons.circle,
                         size: 10,
@@ -62,7 +62,7 @@ class MatchLiveCardHasil extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    left: 17,
+                    left: 0,
                     top: 8,
                     bottom: 8,
                     right: 8,
@@ -125,7 +125,7 @@ class MatchLiveCardHasil extends StatelessWidget {
               Container(
                 width: 74,
                 height: 31,
-                margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                padding: const EdgeInsets.only(right: 4.0),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
