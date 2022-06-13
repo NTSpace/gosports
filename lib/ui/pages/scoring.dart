@@ -210,7 +210,12 @@ class _ScoringPageState extends State<ScoringPage>
                                       fontSize: 24,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Turnover(),
+                                    );
+                                  },
                                 ),
                               )
                             ],
