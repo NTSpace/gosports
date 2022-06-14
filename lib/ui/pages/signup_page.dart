@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/providers/auth_provider.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/main_page.dart';
 import 'package:gosports/ui/widgets/button_signup.dart';
+import 'package:page_transition/page_transition.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:provider/provider.dart';
 import '../widgets/signup_google.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,15 +27,35 @@ class _SignupPageState extends State<SignupPage> {
   @override
   void initState() {
     super.initState();
-    emailAddressControler = TextEditingController();
-    passwordControler = TextEditingController();
-    cpasswordControler = TextEditingController();
+    emailAddressControler = TextEditingController(text: '');
+    passwordControler = TextEditingController(text: '');
+    cpasswordControler = TextEditingController(text: '');
     passwordVisibility = false;
     cpasswordVisibility = false;
   }
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of(context);
+
+    handleSignUp() async {
+      if (await authProvider.register(
+        email: emailAddressControler.text,
+        password: passwordControler.text,
+        konfirmasiPassword: cpasswordControler.text,
+      )) {
+        await Navigator.push(
+          context,
+          PageTransition(
+            type: PageTransitionType.fade,
+            duration: const Duration(milliseconds: 0),
+            reverseDuration: const Duration(milliseconds: 0),
+            child: const MainPage(),
+          ),
+        );
+      }
+    }
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
@@ -206,9 +231,7 @@ class _SignupPageState extends State<SignupPage> {
                 padding: const EdgeInsets.only(top: 15),
                 child: ButtonSignup(
                   text: 'BUAT AKUN',
-                  onPressed: () {
-                    print('Button-Login pressed ...');
-                  },
+                  onPressed: () => handleSignUp(),
                 ),
               ),
               Padding(

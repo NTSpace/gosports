@@ -1,21 +1,22 @@
 import 'dart:convert';
 
 import 'package:gosports/models/user_login.dart';
-import 'package:gosports/models/user_profile.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  String baseUrl = 'auth-service.gosports.id/auth';
+  String baseUrl = 'https://auth-service.gosports.id/auth';
 
   Future<UsersLogin> register({
     required String email,
     required String password,
+    required String konfirmasiPassword,
   }) async {
     var url = Uri.parse('$baseUrl/register');
     var headers = {'Content-Type': 'application/json'};
     var body = jsonEncode({
       'email': email,
       'password': password,
+      'konfirmasi_password': konfirmasiPassword,
     });
 
     var response = await http.post(

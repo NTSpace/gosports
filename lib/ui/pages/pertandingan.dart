@@ -162,10 +162,10 @@ class _PertandinganState extends State<Pertandingan> {
           );
         },
         backgroundColor: kOrangeColor,
+        elevation: 8,
         child: const Icon(
           Icons.add,
         ),
-        elevation: 8,
       ),
       body: SafeArea(
         child: GestureDetector(

@@ -56,7 +56,6 @@ class _FoulsState extends State<Fouls> {
                     ),
                   ),
                   child: DropdownSearch<String>(
-                    popupBackgroundColor: kRedColor,
                     items: data,
                     selectedItem: 'Jenis Pelanggaran',
                   ),

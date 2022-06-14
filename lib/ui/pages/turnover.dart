@@ -56,7 +56,6 @@ class _TurnoverState extends State<Turnover> {
                     ),
                   ),
                   child: DropdownSearch<String>(
-                    popupBackgroundColor: Colors.yellow.shade600,
                     items: data,
                     selectedItem: 'Jenis Turnover',
                   ),

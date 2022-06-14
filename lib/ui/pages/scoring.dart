@@ -29,8 +29,8 @@ class _ScoringPageState extends State<ScoringPage>
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(vsync: this, length: 3);
-    TabController _pbpController = TabController(vsync: this, length: 4);
+    TabController tabController = TabController(vsync: this, length: 3);
+    TabController pbpController = TabController(vsync: this, length: 4);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
@@ -45,7 +45,7 @@ class _ScoringPageState extends State<ScoringPage>
                   labelColor: kOrangeColor,
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: kOrangeColor,
-                  controller: _tabController,
+                  controller: tabController,
                   tabs: [
                     Tab(text: 'Scoring'),
                     Tab(text: 'Pergantian'),
@@ -57,7 +57,7 @@ class _ScoringPageState extends State<ScoringPage>
                 margin: EdgeInsets.only(top: 10),
                 height: MediaQuery.of(context).size.height * 0.40,
                 child: TabBarView(
-                  controller: _tabController,
+                  controller: tabController,
                   children: [
                     Column(
                       children: <Widget>[
@@ -272,7 +272,7 @@ class _ScoringPageState extends State<ScoringPage>
                             labelColor: kOrangeColor,
                             unselectedLabelColor: Colors.grey,
                             indicatorColor: kOrangeColor,
-                            controller: _pbpController,
+                            controller: pbpController,
                             tabs: [
                               Tab(
                                 text: 'Q1',
@@ -293,7 +293,7 @@ class _ScoringPageState extends State<ScoringPage>
                           margin: EdgeInsets.only(top: 10),
                           height: MediaQuery.of(context).size.height * 0.30,
                           child: TabBarView(
-                            controller: _pbpController,
+                            controller: pbpController,
                             children: [
                               Column(
                                 children: [

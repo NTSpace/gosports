@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(vsync: this, length: 2);
+    TabController tabController = TabController(vsync: this, length: 2);
     return SafeArea(
       child: Scaffold(
         backgroundColor: kWhiteColor,
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               indicatorWeight: 2,
               unselectedLabelColor: Colors.grey,
               indicatorColor: kOrangeColor,
-              controller: _tabController,
+              controller: tabController,
               tabs: const [
                 Tab(text: 'MASUK'),
                 Tab(text: 'DAFTAR'),
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
             ),
             Expanded(
               child: TabBarView(
-                controller: _tabController,
+                controller: tabController,
                 children: [
                   Expanded(
                     child: ListView(

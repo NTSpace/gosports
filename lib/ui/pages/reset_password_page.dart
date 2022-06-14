@@ -45,13 +45,13 @@ class _ResetPage extends State<ResetPage> {
               Container(
                 margin: const EdgeInsets.only(top: 35),
                 padding: const EdgeInsets.all(43),
-                child: Image.asset(
-                  'assets/reset_password_icon.png',
-                  width: 40,
-                ),
                 decoration: const BoxDecoration(
                   color: Color(0xffFFE5D2),
                   borderRadius: BorderRadius.all(Radius.circular(100)),
+                ),
+                child: Image.asset(
+                  'assets/reset_password_icon.png',
+                  width: 40,
                 ),
               ),
               Container(

@@ -55,7 +55,7 @@ class PlaybyplayCard extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 8),
                         child: Text(
-                          nomorpg + ', ' + namapemain + ', ' + play,
+                          '$nomorpg, $namapemain, $play',
                           style: blackTextStyle.copyWith(
                             fontSize: 10,
                           ),
