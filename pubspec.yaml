@@ -41,6 +41,8 @@ dependencies:
   path_provider: ^2.0.10
   carousel_slider: ^4.1.1
   dropdown_search: ^3.0.1
+  provider: ^4.3.3
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
