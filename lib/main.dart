@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/ui/pages/splash_page.dart';
-import 'package:gosports/ui/pages/tiga_poin.dart';
-import 'package:gosports/ui/widgets/skorpoin.dart';
 import 'package:gosports/utils/user_preferences.dart';
 
 Future main() async {

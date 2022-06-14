@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
-                size: 35,
+                size: 24,
                 color: currentIndex == 2
                     ? kOrangeColor
                     : const Color.fromRGBO(0, 0, 0, 0.38),
