@@ -38,7 +38,7 @@ class LabeledCheckbox extends StatelessWidget {
           Expanded(
             child: Text(
               label,
-              style: greyTextStyle.copyWith(
+              style: mainTextStyle.copyWith(
                 fontWeight: bold,
                 fontSize: 12,
               ),

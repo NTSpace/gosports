@@ -69,17 +69,14 @@ class _MainPageState extends State<MainPage> {
           {
             return const HomePage();
           }
-          break;
         case 1:
           {
             return const Pertandingan();
           }
-          break;
         case 2:
           {
             return const Profile();
           }
-          break;
         default:
           return const HomePage();
       }

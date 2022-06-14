@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/jadwal_hasil.dart';
 import 'package:gosports/ui/widgets/cardlivematch_hasil.dart';
 import 'package:gosports/ui/widgets/cardmatch_hasil.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
-import 'package:page_transition/page_transition.dart';
 
 class PertandinganHasil extends StatefulWidget {
   const PertandinganHasil({Key? key}) : super(key: key);

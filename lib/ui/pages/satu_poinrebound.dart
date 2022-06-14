@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/shared/theme.dart';
-import 'package:gosports/ui/pages/dua_poinassist.dart';
 import 'package:gosports/ui/pages/satu_poinassist.dart';
 import 'package:gosports/ui/pages/scoring.dart';
 import 'package:gosports/ui/widgets/appbarpoint.dart';

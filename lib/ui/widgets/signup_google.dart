@@ -53,7 +53,7 @@ class GoogleSignUp extends StatelessWidget {
               Text(
                 text,
                 textAlign: TextAlign.center,
-                style: greyTextStyle.copyWith(
+                style: mainTextStyle.copyWith(
                   fontWeight: bold,
                   fontSize: 16,
                 ),

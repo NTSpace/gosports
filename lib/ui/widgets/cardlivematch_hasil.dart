@@ -26,7 +26,7 @@ class MatchLiveCardHasil extends StatelessWidget {
           horizontal: 25,
         ),
         child: Container(
-          padding: EdgeInsets.only(right: 15),
+          padding: const EdgeInsets.only(right: 15),
           width: double.infinity,
           height: 45,
           child: Row(
