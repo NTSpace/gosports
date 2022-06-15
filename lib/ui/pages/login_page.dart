@@ -107,6 +107,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                 top: 15,
                               ),
                               child: TextFormField(
+                                keyboardType: TextInputType.emailAddress,
                                 controller: emailAddressControler,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -153,6 +154,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                                 top: 15,
                               ),
                               child: TextFormField(
+                                keyboardType: TextInputType.visiblePassword,
                                 controller: passwordControler,
                                 obscureText: !passwordVisibility,
                                 decoration: InputDecoration(

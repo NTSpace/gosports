@@ -86,6 +86,7 @@ class _SignupPageState extends State<SignupPage> {
                   top: 15,
                 ),
                 child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   controller: emailAddressControler,
                   obscureText: false,
                   decoration: InputDecoration(
@@ -128,6 +129,7 @@ class _SignupPageState extends State<SignupPage> {
                   top: 15,
                 ),
                 child: TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
                   controller: passwordControler,
                   obscureText: !passwordVisibility,
                   decoration: InputDecoration(
@@ -139,7 +141,7 @@ class _SignupPageState extends State<SignupPage> {
                       color: const Color(0xff8e8e8e),
                       fontSize: 16,
                     ),
-                    hintText: 'Masukkan email...',
+                    hintText: 'Masukkan password...',
                     hintStyle: GoogleFonts.montserrat(
                       color: const Color(0xff8e8e8e),
                       fontSize: 16,
@@ -182,6 +184,7 @@ class _SignupPageState extends State<SignupPage> {
                   top: 15,
                 ),
                 child: TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
                   controller: cpasswordControler,
                   obscureText: !cpasswordVisibility,
                   decoration: InputDecoration(
