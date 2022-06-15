@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:gosports/services/auth_service.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gosports/ui/pages/main_page.dart';
@@ -8,6 +11,8 @@ import 'package:gosports/ui/pages/signup_page.dart';
 import 'package:gosports/ui/widgets/login_google.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:gosports/ui/widgets/button_login.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,6 +22,34 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
+  // final _baseUrl = 'https://auth-service.gosports.id/auth/login';
+  // handleSignUp() async {
+  //   http.Response response = await AuthService.login(
+  //     emailAddressControler.text,
+  //     passwordControler.text,
+  //   );
+  //   if (response.statusCode == 200) {
+  //     const snackBar = SnackBar(
+  //       content: Text('Login Berhasil'),
+  //     );
+  //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  //     await Navigator.push(
+  //       context,
+  //       PageTransition(
+  //         type: PageTransitionType.fade,
+  //         duration: const Duration(milliseconds: 0),
+  //         reverseDuration: const Duration(milliseconds: 0),
+  //         child: const MainPage(),
+  //       ),
+  //     );
+  //   } else {
+  //     const snackBar = SnackBar(
+  //       content: Text('Invalid input'),
+  //     );
+  //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  //   }
+  // }
+
   late TextEditingController emailAddressControler;
   late TextEditingController passwordControler;
   late bool passwordVisibility;
@@ -30,6 +63,46 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     emailAddressControler = TextEditingController();
     passwordControler = TextEditingController();
     passwordVisibility = false;
+  }
+
+  handleSignUp() async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+
+    final _token = sharedPreferences.getString("token");
+    final _id = sharedPreferences.getInt("id");
+    var jsonResponse = null;
+
+    http.Response response = await AuthService.login(
+      emailAddressControler.text,
+      passwordControler.text,
+    );
+    if (response.statusCode == 200) {
+      const snackBar = SnackBar(
+        content: Text('Login berhasil'),
+      );
+      jsonResponse = json.decode(response.body);
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      sharedPreferences.setString("token", jsonResponse['token']['token']);
+      sharedPreferences.setInt("id", jsonResponse['id']);
+      // ignore: use_build_context_synchronously
+      await Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.fade,
+          duration: const Duration(milliseconds: 0),
+          reverseDuration: const Duration(milliseconds: 0),
+          child: const MainPage(),
+        ),
+      );
+    } else {
+      const snackBar = SnackBar(
+        content: Text('Invalid input'),
+      );
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
   }
 
   @override
@@ -263,18 +336,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                               padding: const EdgeInsets.only(top: 15),
                               child: LoginButton(
                                 text: 'MASUK',
-                                onPressed: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration: const Duration(milliseconds: 0),
-                                      reverseDuration:
-                                          const Duration(milliseconds: 0),
-                                      child: const MainPage(),
-                                    ),
-                                  );
-                                },
+                                onPressed: () => handleSignUp(),
                               ),
                             ),
                             Padding(

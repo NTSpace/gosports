@@ -16,10 +16,10 @@ class UsersLogin {
   });
 
   int id;
-  String nama;
+  String? nama;
   String email;
   String cabor;
-  String token;
+  String? token;
   // DateTime createdAt;
   // DateTime updatedAt;
   // dynamic sosialMedia;

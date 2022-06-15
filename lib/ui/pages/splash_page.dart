@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:gosports/ui/pages/main_page.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../shared/theme.dart';
 import 'login_page.dart';
 
@@ -14,12 +16,24 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
-    super.initState();
     startTimer();
+    super.initState();
   }
 
   startTimer() async {
-    var duration = const Duration(seconds: 4);
+    var duration = const Duration(seconds: 6);
+    final sharedPreferences = await SharedPreferences.getInstance();
+    final _token = sharedPreferences.getString("token");
+
+    if (_token != null) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => MainPage()),
+          (Route<dynamic> route) => false);
+    } else {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+          (Route<dynamic> route) => false);
+    }
     return Timer(duration, route);
   }
 

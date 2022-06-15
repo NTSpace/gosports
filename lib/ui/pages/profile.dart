@@ -1,4 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:gosports/models/user_login.dart';
 import 'package:gosports/models/user_profile.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/edit_email.dart';
@@ -12,6 +17,8 @@ import 'package:gosports/ui/widgets/profile_widget.dart';
 import 'package:gosports/ui/widgets/simpan_button.dart';
 import 'package:gosports/utils/user_preferences.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -21,20 +28,44 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  late SharedPreferences sharedPreferences;
   late bool passwordVisibility;
   final double coverHeight = 280;
   final double profileHeight = 55;
   late User user;
+  String? _token;
+  UsersLogin? _user;
+  late int _id;
+
+  _getUser() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    _token = sharedPreferences.getString("token")!;
+    _id = sharedPreferences.getInt("id")!;
+  }
+
+  Future<void> fetchUser() async {
+    final response = await http
+        .get(Uri.parse('https://auth-service.gosports.id/users/192'), headers: {
+      'Content-Type': 'application/json',
+    });
+    setState(() {
+      _user = UsersLogin.fromJson(jsonDecode(response.body));
+      _user = UsersLogin.fromJson(jsonDecode(response.body));
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    _getUser();
+    fetchUser();
     passwordVisibility = false;
     user = UserPreferences.getUser();
   }
 
   @override
   Widget build(BuildContext context) {
+    print(_user);
     final user = UserPreferences.getUser();
     return Scaffold(
       backgroundColor: kWhiteColor,
@@ -97,7 +128,7 @@ class _ProfileState extends State<Profile> {
                     color: kBlackColor,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  hintText: user.nama,
+                  hintText: _user?.nama,
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontWeight: semibold,
@@ -144,7 +175,7 @@ class _ProfileState extends State<Profile> {
                     color: kBlackColor,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  hintText: user.email,
+                  hintText: _user?.email,
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontWeight: semibold,
@@ -192,7 +223,7 @@ class _ProfileState extends State<Profile> {
                     color: kBlackColor,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  hintText: "anjaycuy",
+                  hintText: "********",
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontWeight: semibold,
@@ -279,6 +310,10 @@ class _ProfileState extends State<Profile> {
             child: KeluarButton(
               text: 'Keluar',
               onPressed: () async {
+                sharedPreferences
+                  ..clear()
+                  ..commit();
+
                 await Navigator.push(
                   context,
                   PageTransition(

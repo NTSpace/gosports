@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gosports/providers/auth_provider.dart';
+import 'package:gosports/services/auth_service.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:gosports/ui/pages/login_page.dart';
 import 'package:gosports/ui/pages/main_page.dart';
 import 'package:gosports/ui/widgets/button_signup.dart';
+import 'package:http/http.dart' as http;
 import 'package:page_transition/page_transition.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:provider/provider.dart';
@@ -20,6 +23,7 @@ class _SignupPageState extends State<SignupPage> {
   late TextEditingController emailAddressControler;
   late TextEditingController passwordControler;
   late TextEditingController cpasswordControler;
+  late TextEditingController namaController;
   late bool passwordVisibility;
   late bool cpasswordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -27,6 +31,7 @@ class _SignupPageState extends State<SignupPage> {
   @override
   void initState() {
     super.initState();
+    namaController = TextEditingController(text: 'user');
     emailAddressControler = TextEditingController(text: '');
     passwordControler = TextEditingController(text: '');
     cpasswordControler = TextEditingController(text: '');
@@ -36,25 +41,54 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    AuthProvider authProvider = Provider.of(context);
+    // AuthProvider authProvider = Provider.of(context);
 
+    // handleSignUp() async {
+    //   if (await authProvider.register(
+    //     email: emailAddressControler.text,
+    //     password: passwordControler.text,
+    //     konfirmasiPassword: cpasswordControler.text,
+    //     cabor: 'basketball',
+    //     nama: 'users',
+    //   )) {
+    //     await Navigator.push(
+    //       context,
+    //       PageTransition(
+    //         type: PageTransitionType.fade,
+    //         duration: const Duration(milliseconds: 0),
+    //         reverseDuration: const Duration(milliseconds: 0),
+    //         child: const MainPage(),
+    //       ),
+    //     );
+    //   }
+    // }
     handleSignUp() async {
-      if (await authProvider.register(
-        email: emailAddressControler.text,
-        password: passwordControler.text,
-        konfirmasiPassword: cpasswordControler.text,
-        cabor: 'basketball',
-        nama: 'users',
-      )) {
+      http.Response response = await AuthService.register(
+        namaController.text,
+        emailAddressControler.text,
+        passwordControler.text,
+        cpasswordControler.text,
+        'basketball',
+      );
+      if (response.statusCode == 200) {
+        const snackBar = SnackBar(
+          content: Text('Akun berhasil dibuat'),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
         await Navigator.push(
           context,
           PageTransition(
             type: PageTransitionType.fade,
             duration: const Duration(milliseconds: 0),
             reverseDuration: const Duration(milliseconds: 0),
-            child: const MainPage(),
+            child: const LoginPage(),
           ),
         );
+      } else {
+        const snackBar = SnackBar(
+          content: Text('Invalid input'),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     }
 

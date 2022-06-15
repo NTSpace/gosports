@@ -1,68 +1,54 @@
 import 'dart:convert';
 
-import 'package:gosports/models/user_login.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
+String baseUrl = 'https://auth-service.gosports.id/auth';
 
 class AuthService {
-  String baseUrl = 'https://auth-service.gosports.id/auth';
-
-  Future<UsersLogin> register({
-    required String email,
-    required String password,
-    required String konfirmasiPassword,
-    required String cabor,
-    required String nama,
-  }) async {
-    var url = Uri.parse('$baseUrl/register');
-    var headers = {'Content-Type': 'application/json'};
-    var body = jsonEncode({
+  static Future<http.Response> register(
+    String nama,
+    String email,
+    String password,
+    String konfirmasiPassword,
+    String cabor,
+  ) async {
+    Map data = {
+      "nama": nama,
       'email': email,
       'password': password,
       'konfirmasi_password': konfirmasiPassword,
       'cabor': cabor,
-      'nama': nama,
-    });
-
-    var response = await http.post(
+    };
+    var body = json.encode(data);
+    var url = Uri.parse('$baseUrl/register');
+    http.Response response = await http.post(
       url,
-      headers: headers,
+      headers: {'Content-Type': 'application/json'},
       body: body,
     );
     print(response.body);
-
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
-      data.token = 'bearer ' + data['token'];
-      return data.token;
-    } else {
-      throw Exception('Gagal registrasi');
-    }
+    return response;
   }
 
-  Future<UsersLogin> login({
-    required String email,
-    required String password,
-  }) async {
-    var url = Uri.parse('$baseUrl/login');
-    var headers = {'Content-Type': 'application/json'};
-    var body = jsonEncode({
+  static Future<http.Response> login(
+    String email,
+    String password,
+  ) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    Map data = {
       'email': email,
       'password': password,
-    });
-
-    var response = await http.post(
+    };
+    var body = json.encode(data);
+    var url = Uri.parse('$baseUrl/login');
+    http.Response response = await http.post(
       url,
-      headers: headers,
+      headers: {'Content-Type': 'application/json'},
       body: body,
     );
     print(response.body);
-
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
-      data.token = 'bearer ' + data['token'];
-      return data.token;
-    } else {
-      throw Exception('Gagal Login');
-    }
+    return response;
   }
 }
