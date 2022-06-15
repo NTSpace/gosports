@@ -10,6 +10,8 @@ class AuthService {
     required String email,
     required String password,
     required String konfirmasiPassword,
+    required String cabor,
+    required String nama,
   }) async {
     var url = Uri.parse('$baseUrl/register');
     var headers = {'Content-Type': 'application/json'};
@@ -17,6 +19,8 @@ class AuthService {
       'email': email,
       'password': password,
       'konfirmasi_password': konfirmasiPassword,
+      'cabor': cabor,
+      'nama': nama,
     });
 
     var response = await http.post(

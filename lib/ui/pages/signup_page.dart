@@ -43,6 +43,8 @@ class _SignupPageState extends State<SignupPage> {
         email: emailAddressControler.text,
         password: passwordControler.text,
         konfirmasiPassword: cpasswordControler.text,
+        cabor: 'basketball',
+        nama: 'users',
       )) {
         await Navigator.push(
           context,
