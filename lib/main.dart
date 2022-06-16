@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gosports/providers/auth_provider.dart';
+import 'package:gosports/ui/pages/hasil.dart';
 import 'package:gosports/ui/pages/splash_page.dart';
 import 'package:gosports/utils/user_preferences.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Go-Sports',
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      home: Hasil(),
     );
   }
 }
