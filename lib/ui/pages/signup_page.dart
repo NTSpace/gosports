@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gosports/providers/auth_provider.dart';
 import 'package:gosports/services/auth_service.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/login_page.dart';
-import 'package:gosports/ui/pages/main_page.dart';
 import 'package:gosports/ui/widgets/button_signup.dart';
 import 'package:http/http.dart' as http;
 import 'package:page_transition/page_transition.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:provider/provider.dart';
 import '../widgets/signup_google.dart';
 import 'package:google_fonts/google_fonts.dart';
 

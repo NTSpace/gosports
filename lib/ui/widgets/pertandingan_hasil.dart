@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/ui/pages/hasil.dart';
 import 'package:gosports/ui/widgets/cardlivematch_hasil.dart';
 import 'package:gosports/ui/widgets/cardmatch_hasil.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
+import 'package:page_transition/page_transition.dart';
 
 class PertandinganHasil extends StatefulWidget {
   const PertandinganHasil({Key? key}) : super(key: key);
@@ -37,7 +39,16 @@ class _PertandinganHasilState extends State<PertandinganHasil> {
               logo2: 'assets/lakersTim.png',
               namatim1: 'BUCKS',
               namatim2: 'LAKERS',
-              onClicked: () {},
+              onClicked: () async {
+                await Navigator.push(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.fade,
+                      duration: const Duration(milliseconds: 0),
+                      reverseDuration: const Duration(milliseconds: 0),
+                      child: const Hasil()),
+                );
+              },
               skor1: '120',
               skor2: '105',
             ),

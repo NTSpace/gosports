@@ -27,11 +27,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     if (_token != null) {
       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (BuildContext context) => MainPage()),
+          MaterialPageRoute(
+              builder: (BuildContext context) => const MainPage()),
           (Route<dynamic> route) => false);
     } else {
       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+          MaterialPageRoute(
+              builder: (BuildContext context) => const LoginPage()),
           (Route<dynamic> route) => false);
     }
     return Timer(duration, route);

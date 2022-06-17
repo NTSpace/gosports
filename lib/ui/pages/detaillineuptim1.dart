@@ -4,6 +4,7 @@ import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/detaillineuptim2.dart';
 import 'package:gosports/ui/widgets/cardpemain.dart';
 import 'package:gosports/ui/widgets/cardtim.dart';
+import 'package:gosports/ui/widgets/scoreboard_jadwalhasil.dart';
 import 'package:page_transition/page_transition.dart';
 
 class DetailLineup extends StatefulWidget {
@@ -49,131 +50,13 @@ class _DetailLineupState extends State<DetailLineup> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 230,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/scoreboard.png'),
-                    fit: BoxFit.fill),
-              ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(top: 43),
-                    child: Text(
-                      'SEMI FINAL DBL',
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: bold,
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 14),
-                    child: Text(
-                      'SENIN, 10 MEI 2022',
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: semibold,
-                        fontSize: 12,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 14),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/rocketsTim.png'),
-                                    fit: BoxFit.cover),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 3),
-                              child: Text(
-                                'ROCKETS',
-                                style: whiteTextStyle.copyWith(
-                                  fontWeight: semibold,
-                                  fontSize: 12,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 22),
-                          child: Text(
-                            '000',
-                            style: whiteTextStyle.copyWith(
-                              fontWeight: bold,
-                              fontSize: 20,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 5),
-                          child: Text(
-                            '-',
-                            style: whiteTextStyle.copyWith(
-                              fontWeight: bold,
-                              fontSize: 20,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 5),
-                          child: Text(
-                            '000',
-                            style: whiteTextStyle.copyWith(
-                              fontWeight: bold,
-                              fontSize: 20,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              margin: const EdgeInsets.only(left: 22),
-                              width: 60,
-                              height: 60,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/kingsTim.png'),
-                                    fit: BoxFit.cover),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 3, left: 22),
-                              child: Text(
-                                'KINGS',
-                                style: whiteTextStyle.copyWith(
-                                  fontWeight: semibold,
-                                  fontSize: 12,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            const ScoreboardHasilJadwal(
+              namatima: 'ROCKETS',
+              namatimb: 'KINGS',
+              logotima: 'assets/rocketsTim.png',
+              logotimb: 'assets/kingsTim.png',
+              skorpoin1: 000,
+              skorpoin2: 000,
             ),
             SingleChildScrollView(
               child: Column(
