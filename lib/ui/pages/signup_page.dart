@@ -20,7 +20,6 @@ class _SignupPageState extends State<SignupPage> {
   late TextEditingController emailAddressControler;
   late TextEditingController passwordControler;
   late TextEditingController cpasswordControler;
-  late TextEditingController namaController;
   late bool passwordVisibility;
   late bool cpasswordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -28,7 +27,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   void initState() {
     super.initState();
-    namaController = TextEditingController(text: 'user');
     emailAddressControler = TextEditingController(text: '');
     passwordControler = TextEditingController(text: '');
     cpasswordControler = TextEditingController(text: '');
@@ -61,7 +59,7 @@ class _SignupPageState extends State<SignupPage> {
     // }
     handleSignUp() async {
       http.Response response = await AuthService.register(
-        namaController.text,
+        'nama',
         emailAddressControler.text,
         passwordControler.text,
         cpasswordControler.text,

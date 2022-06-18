@@ -69,9 +69,6 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
 
-    final _token = sharedPreferences.getString("token");
-    var jsonResponse = null;
-
     http.Response response = await AuthService.login(
       emailAddressControler.text,
       passwordControler.text,
@@ -80,12 +77,13 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
       const snackBar = SnackBar(
         content: Text('Login berhasil'),
       );
-      jsonResponse = json.decode(response.body);
+      final jsonResponse = jsonDecode(response.body);
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
       sharedPreferences.setString("token", jsonResponse['token']['token']);
-      final id = jsonResponse['id'].toString();
-      sharedPreferences.setString("id", id);
+      int userId = jsonResponse['id'];
+      sharedPreferences.setInt("id", userId);
+      print(userId);
       // ignore: use_build_context_synchronously
       await Navigator.push(
         context,

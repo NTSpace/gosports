@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -33,23 +31,17 @@ class _ProfileState extends State<Profile> {
   final double coverHeight = 280;
   final double profileHeight = 55;
   late User user;
-  String? _token;
   UsersLogin? _user;
-  late int _id;
 
-  _getUser() async {
+  Future<void> getUser() async {
+    String id;
     sharedPreferences = await SharedPreferences.getInstance();
-    _token = sharedPreferences.getString("token")!;
-    _id = sharedPreferences.getInt("id")!;
-  }
-
-  Future<void> fetchUser() async {
+    id = sharedPreferences.getInt("id").toString();
     final response = await http
-        .get(Uri.parse('https://auth-service.gosports.id/users/192'), headers: {
+        .get(Uri.parse('https://auth-service.gosports.id/users/$id'), headers: {
       'Content-Type': 'application/json',
     });
     setState(() {
-      _user = UsersLogin.fromJson(jsonDecode(response.body));
       _user = UsersLogin.fromJson(jsonDecode(response.body));
     });
   }
@@ -57,15 +49,13 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
-    _getUser();
-    fetchUser();
+    getUser();
     passwordVisibility = false;
     user = UserPreferences.getUser();
   }
 
   @override
   Widget build(BuildContext context) {
-    print(_user);
     final user = UserPreferences.getUser();
     return Scaffold(
       backgroundColor: kWhiteColor,
