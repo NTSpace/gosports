@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Go-Sports',
       debugShowCheckedModeBanner: false,
-      home: Hasil(),
+      home: SplashPage(),
     );
   }
 }
