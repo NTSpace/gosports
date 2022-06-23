@@ -12,8 +12,6 @@ class TimService {
 
     var response = await http.get(Uri.parse(url), headers: headers);
 
-    print(response.body);
-
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       return TimModel.fromJson(data);
