@@ -13,6 +13,8 @@ class AuthService {
     String konfirmasiPassword,
     String cabor,
   ) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
     Map data = {
       "nama": nama,
       'email': email,

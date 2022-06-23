@@ -1,62 +1,50 @@
-import 'package:gosports/models/babak.dart';
-import 'package:gosports/models/game.dart';
+import 'dart:convert';
 import 'package:gosports/models/pesertas.dart';
 import 'package:gosports/models/turnamen.dart';
+import 'package:http/http.dart' as http;
 
 class PertandinganModel {
-  int id;
+  String? id;
   String? judul;
   String? lokasi;
-  DateTime? tanggalMulai;
+  String? urutan;
+  DateTime tanggalMulai;
   String? livestream;
-  String status;
+  String? status;
   List<PesertasModel> pesertas;
-  Turnamen? turnamen;
-  Babak? babak;
-  GameModel? games;
+  TurnamenModel? turnamen;
 
   PertandinganModel({
-    required this.id,
+    this.id,
     this.judul,
     this.lokasi,
-    this.tanggalMulai,
+    this.urutan,
+    required this.tanggalMulai,
     this.livestream,
-    required this.status,
+    this.status,
     required this.pesertas,
     this.turnamen,
-    this.babak,
-    this.games,
   });
 
-  factory PertandinganModel.fromJson(Map<String, dynamic> json) {
+  factory PertandinganModel.createPertandingan(Map<String, dynamic> json) {
     return PertandinganModel(
-      id: json['id'],
+      id: json['id'].toString(),
       judul: json['judul'],
       lokasi: json['lokasi'],
-      tanggalMulai: DateTime.parse(json['tanggal_mulai']),
+      urutan: json['urutan'].toString(),
+      tanggalMulai: json['tanggal_mulai'] != null
+          ? DateTime.parse(json['tanggal_mulai'])
+          : DateTime.now(),
       livestream: json['livestream'],
       status: json['status'],
-      pesertas: json['pesertas']
-          .map<PesertasModel>((peserta) => PesertasModel.fromJson(peserta))
-          .toList(),
-      turnamen: Turnamen.fromJson(json['turnamen']),
-      babak: Babak.fromJson(json['babak']),
-      games: GameModel.fromJson(json['games']),
+      pesertas: json['pesertas'] != null
+          ? (json['pesertas'] as List)
+              .map((peserta) => PesertasModel.fromJson(peserta))
+              .toList()
+          : [],
+      turnamen: json['turnamen'] != null
+          ? TurnamenModel.fromJson(json['turnamen'])
+          : null,
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'judul': judul,
-      'lokasi': lokasi,
-      'tanggalMulai': tanggalMulai,
-      'livestream': livestream,
-      'status': status,
-      'pesertas': pesertas.map((peserta) => peserta.toJson()).toList(),
-      'turnamen': turnamen?.toJson(),
-      'babak': babak?.toJson(),
-      'games': games?.toJson(),
-    };
   }
 }

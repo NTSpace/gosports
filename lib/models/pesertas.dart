@@ -4,13 +4,13 @@ class PesertasModel {
   int id;
   int menang;
   int poin;
-  int? timId;
+  String links;
 
   PesertasModel({
     required this.id,
     required this.menang,
     required this.poin,
-    this.timId,
+    required this.links,
   });
 
   factory PesertasModel.fromJson(Map<String, dynamic> json) {
@@ -18,16 +18,7 @@ class PesertasModel {
       id: json['id'],
       menang: json['menang'],
       poin: json['poin'],
-      timId: json['tim_id'],
+      links: json['links']['tim'],
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'menang': menang,
-      'poin': poin,
-      'tim_id': timId,
-    };
   }
 }
