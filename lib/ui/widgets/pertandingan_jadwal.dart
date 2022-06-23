@@ -4,6 +4,8 @@ import 'package:gosports/providers/pertandingan_provider.dart';
 import 'package:gosports/providers/tim_provider.dart';
 import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/pages/point.dart';
+import 'package:gosports/ui/widgets/cardlistpertandingan_jadwal.dart';
+import 'package:gosports/ui/widgets/cardlistpertandingan_live.dart';
 import 'package:gosports/ui/widgets/cardlivematch.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';
 import 'package:gosports/ui/widgets/datematch.dart';

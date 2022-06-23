@@ -103,7 +103,7 @@ class _JadwalHasilState extends State<JadwalHasil>
             ),
             SizedBox(
               // margin: EdgeInsets.only(top: 25),
-              height: MediaQuery.of(context).size.height * 0.40,
+              height: MediaQuery.of(context).size.height * 0.70,
               child: TabBarView(
                 controller: _tabController,
                 children: const [

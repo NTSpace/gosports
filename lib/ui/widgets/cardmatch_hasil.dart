@@ -22,9 +22,6 @@ class MatchCardHasil extends StatelessWidget {
     return InkWell(
       onTap: onClicked,
       child: Card(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 25,
-        ),
         child: SizedBox(
           width: double.infinity,
           height: 45,

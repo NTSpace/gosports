@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                     color: kBlackColor,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  hintText: _user?.nama,
+                  hintText: user.nama,
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontWeight: semibold,
@@ -143,17 +143,7 @@ class _ProfileState extends State<Profile> {
               right: 50,
             ),
             child: InkWell(
-              onTap: () async {
-                await Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.rightToLeft,
-                    duration: const Duration(milliseconds: 500),
-                    reverseDuration: const Duration(milliseconds: 500),
-                    child: const EditEmail(),
-                  ),
-                );
-              },
+              onTap: () {},
               child: TextField(
                 enabled: false,
                 decoration: InputDecoration(
