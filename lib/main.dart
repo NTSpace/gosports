@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -35,6 +36,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: JadwalHasil(),
       ),
+=======
+    return const MaterialApp(
+      title: 'Go-Sports',
+      debugShowCheckedModeBanner: false,
+      home: SplashPage(),
+>>>>>>> 0e74a640af652d19a8b0dfbd2d4664d36e24b7d5
     );
   }
 }

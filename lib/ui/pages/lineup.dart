@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/ui/pages/ganti_pemain_page.dart';
 import 'package:gosports/ui/pages/lineup_pemain.dart';
 import 'package:gosports/ui/pages/pergantian.dart';
 import 'package:page_transition/page_transition.dart';
@@ -49,7 +50,7 @@ class _LineupState extends State<Lineup> {
                         type: PageTransitionType.fade,
                         duration: const Duration(milliseconds: 0),
                         reverseDuration: const Duration(milliseconds: 0),
-                        child: const PergantianPage(),
+                        child: const GantiPemain(),
                       ),
                     );
                   },

@@ -10,7 +10,7 @@ class UserPreferences {
   static const myUser = User(
     imagePath:
         'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png',
-    nama: 'Tachi ',
+    nama: 'Users',
     email: 'nomuramtr75@gmail.com',
     nomor: '081213702872',
   );

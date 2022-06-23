@@ -12,7 +12,6 @@ class DateCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 25),
       child: Container(
         width: double.infinity,
         height: 45,

@@ -2,6 +2,8 @@ import 'package:gosports/models/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/detaillineuptim1.dart';
+import 'package:gosports/ui/pages/jadwal_hasil.dart';
+import 'package:gosports/ui/widgets/cardlistpertandingan_jadwal.dart';
 import 'package:gosports/ui/widgets/cardmatch.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
 import 'package:gosports/utils/user_preferences.dart';
@@ -137,17 +139,16 @@ class _HomePageState extends State<HomePage> {
             Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.symmetric(
-                vertical: 20,
+                vertical: 30,
               ),
               color: kWhiteColor,
-              height: 250,
               width: double.infinity,
               child: Column(
                 children: <Widget>[
                   Container(
                     margin: const EdgeInsets.symmetric(
                       horizontal: 24,
-                      vertical: 16,
+                      vertical: 10,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,8 +162,16 @@ class _HomePageState extends State<HomePage> {
                           textAlign: TextAlign.left,
                         ),
                         InkWell(
-                          onTap: () {
-                            print('Button-Login pressed ...');
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: const Duration(milliseconds: 500),
+                                  reverseDuration:
+                                      const Duration(milliseconds: 500),
+                                  child: const JadwalHasil()),
+                            );
                           },
                           child: Text(
                             'Lihat Semua >',
@@ -176,39 +185,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  const DateCard(
-                    date: 'Minggu, 17 April 2022',
-                  ),
-                  MatchCard(
-                      status: '11:20',
-                      logo1: 'assets/rocketsTim.png',
-                      logo2: 'assets/kingsTim.png',
-                      namatim1: 'ROCKETS',
-                      namatim2: 'KINGS',
-                      onClicked: () async {
-                        await Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: const Duration(milliseconds: 0),
-                              reverseDuration: const Duration(milliseconds: 0),
-                              child: const DetailLineup()),
-                        );
-                      }),
-                  MatchCard(
-                      status: '14:30',
-                      logo1: 'assets/miamiTim.png',
-                      logo2: 'assets/broklynTim.png',
-                      namatim1: 'MIAMI',
-                      namatim2: 'BROKLYN',
-                      onClicked: () {}),
-                  MatchCard(
-                      status: '18:30',
-                      logo1: 'assets/utahTim.png',
-                      logo2: 'assets/bullsTim.png',
-                      namatim1: 'UTAH',
-                      namatim2: 'BULLS',
-                      onClicked: () {}),
+                  ListPertandinganJadwal(),
                 ],
               ),
             )
