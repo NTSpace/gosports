@@ -1,12 +1,12 @@
-class Turnamen {
+class TurnamenModel {
   int id;
   String judul;
   String? deskripsi;
-  DateTime tanggalMulai;
-  DateTime tanggalAkhir;
+  String tanggalMulai;
+  String tanggalAkhir;
   String? foto;
 
-  Turnamen({
+  TurnamenModel({
     required this.id,
     required this.judul,
     this.deskripsi,
@@ -15,8 +15,8 @@ class Turnamen {
     this.foto,
   });
 
-  factory Turnamen.fromJson(Map<String, dynamic> json) {
-    return Turnamen(
+  factory TurnamenModel.fromJson(Map<String, dynamic> json) {
+    return TurnamenModel(
       id: json['id'],
       judul: json['judul'],
       deskripsi: json['deskripsi'],
@@ -24,14 +24,5 @@ class Turnamen {
       tanggalAkhir: json['tanggal_akhir'],
       foto: json['foto'],
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'judul': judul,
-      'deskripsi': deskripsi,
-      'foto': foto,
-    };
   }
 }

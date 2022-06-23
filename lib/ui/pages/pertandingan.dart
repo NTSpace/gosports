@@ -176,38 +176,42 @@ class _PertandinganState extends State<Pertandingan> {
             decoration: const BoxDecoration(
               color: Color(0xFFEEEEEE),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
+            child: ListView(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 122),
-                  child: Image.asset(
-                    'assets/bro.png',
-                    width: 170,
-                    height: 195,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  child: Text(
-                    'Belum ada pertandingan',
-                    style: blackTextStyle.copyWith(
-                      fontWeight: semibold,
-                      fontSize: 16,
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 122),
+                      child: Image.asset(
+                        'assets/bro.png',
+                        width: 170,
+                        height: 195,
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(65, 13, 65, 0),
-                  child: Text(
-                    'segera join pertandingan dengan memasukan code yang telah di berikan oleh panitia turnamen ..',
-                    style: greyTextStyle.copyWith(
-                      fontSize: 12,
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      child: Text(
+                        'Belum ada pertandingan',
+                        style: blackTextStyle.copyWith(
+                          fontWeight: semibold,
+                          fontSize: 16,
+                        ),
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                )
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(65, 13, 65, 0),
+                      child: Text(
+                        'segera join pertandingan dengan memasukan code yang telah di berikan oleh panitia turnamen ..',
+                        style: greyTextStyle.copyWith(
+                          fontSize: 12,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

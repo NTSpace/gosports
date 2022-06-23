@@ -40,6 +40,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   }
 
   route() {
+    if (!mounted) return;
     Navigator.pushReplacement(
       context,
       PageTransition(

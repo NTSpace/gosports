@@ -27,10 +27,10 @@ class _PertandinganJadwalState extends State<PertandinganJadwal> {
               height: 23,
             ),
             ListPertandinganLive(),
-            const SizedBox(
-              height: 17,
-            ),
-            ListPertandinganJadwal()
+            // const SizedBox(
+            //   height: 17,
+            // ),
+            // ListPertandinganJadwal()
           ],
         ),
       ],
