@@ -203,7 +203,7 @@ class _PertandinganState extends State<Pertandingan> {
                     Container(
                       margin: const EdgeInsets.fromLTRB(65, 13, 65, 0),
                       child: Text(
-                        'segera join pertandingan dengan memasukan code yang telah di berikan oleh panitia turnamen ..',
+                        'segera join pertandingan dengan memasukan code yang telah di berikan oleh panitia turnamen .',
                         style: greyTextStyle.copyWith(
                           fontSize: 12,
                         ),
