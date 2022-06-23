@@ -24,9 +24,19 @@ class PertandinganProvider with ChangeNotifier {
     try {
       final pertandingan = await PertandinganService.pertandinganJadwal();
       this.pertandingan = pertandingan;
-      print(pertandingan.first.judul);
     } catch (e) {
       return;
     }
   }
+
+  void getPertandinganHasil() async {
+    try {
+      final pertandingan = await PertandinganService.pertandinganHasil();
+      this.pertandingan = pertandingan;
+    } catch (e) {
+      return;
+    }
+  }
+
+  void getPertandingan() {}
 }

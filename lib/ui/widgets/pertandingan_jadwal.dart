@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/providers/pertandingan_provider.dart';
 import 'package:gosports/shared/theme.dart';
 import 'package:gosports/ui/pages/detaillineuptim1.dart';
 import 'package:gosports/ui/pages/point.dart';
