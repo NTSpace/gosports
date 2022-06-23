@@ -3,6 +3,7 @@ import 'package:gosports/models/pertandingan.dart';
 import 'package:gosports/models/tim.dart';
 import 'package:gosports/providers/tim_provider.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MatchLiveCard extends StatelessWidget {
@@ -11,8 +12,8 @@ class MatchLiveCard extends StatelessWidget {
 
   const MatchLiveCard({
     Key? key,
-    required this.item,
     required this.onClicked,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -33,20 +34,20 @@ class MatchLiveCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      item.status ?? '-',
-                      style: redTextStyle.copyWith(
+                      DateFormat('hh:mm').format(item.tanggalMulai),
+                      style: blackTextStyle.copyWith(
                         fontSize: 10,
                         fontWeight: semibold,
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: const Icon(
-                        Icons.circle,
-                        size: 10,
-                        color: Color(0xfff34141),
-                      ),
-                    ),
+                    // Container(
+                    //   margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                    //   child: const Icon(
+                    //     Icons.circle,
+                    //     size: 10,
+                    //     color: Color(0xfff34141),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -61,22 +62,23 @@ class MatchLiveCard extends StatelessWidget {
                         height: 31,
                         margin: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 17,
-                              top: 8,
-                              bottom: 8,
-                              right: 8,
-                            ),
-                            child: Consumer<TimProvider>(
-                              builder: (context, value, child) => Text(
-                                value.tim?.nama ?? '-',
-                                textAlign: TextAlign.end,
-                                style: blackTextStyle.copyWith(
-                                  fontSize: 10,
-                                  fontWeight: regular,
-                                ),
+                          padding: const EdgeInsets.only(
+                            left: 17,
+                            top: 8,
+                            bottom: 8,
+                            right: 8,
+                          ),
+                          child: Consumer<TimProvider>(
+                            builder: (context, value, child) => Text(
+                              value.tim?.nama ?? '-',
+                              textAlign: TextAlign.end,
+                              style: blackTextStyle.copyWith(
+                                fontSize: 10,
+                                fontWeight: regular,
                               ),
-                            )),
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
                         width: 32,

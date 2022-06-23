@@ -37,4 +37,6 @@ class PertandinganProvider with ChangeNotifier {
       return;
     }
   }
+
+  void getPertandingan() {}
 }

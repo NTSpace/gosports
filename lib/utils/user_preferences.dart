@@ -12,7 +12,7 @@ class UserPreferences {
         'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png',
     nama: 'Users',
     email: 'nomuramtr75@gmail.com',
-    nomor: '081213702872',
+    nomor: '08XXXXXXXXXX',
   );
 
   static Future init() async =>

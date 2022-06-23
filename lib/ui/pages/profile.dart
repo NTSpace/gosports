@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                     color: kBlackColor,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  hintText: user.nama,
+                  hintText: _user?.nama,
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontWeight: semibold,
