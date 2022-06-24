@@ -1,56 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/models/pertandingan.dart';
+import 'package:gosports/providers/pertandingan_provider.dart';
 import 'package:gosports/ui/pages/hasil.dart';
 import 'package:gosports/ui/widgets/cardlivematch_hasil.dart';
 import 'package:gosports/ui/widgets/datematch.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 
-class ListPertandinganHasil extends StatelessWidget {
+class ListPertandinganHasil extends StatefulWidget {
   const ListPertandinganHasil({Key? key}) : super(key: key);
+
+  @override
+  State<ListPertandinganHasil> createState() => _ListPertandinganHasilState();
+}
+
+class _ListPertandinganHasilState extends State<ListPertandinganHasil> {
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    context.read<PertandinganProvider>().getPertandinganHasil();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: <Widget>[
-          DateCard(date: 'Hari Ini'),
-          MatchLiveCardHasil(
-            status: 'Live',
-            logo1: 'assets/warriorsTim.png',
-            logo2: 'assets/grizzliesTim.png',
-            namatim1: 'WARRIORS',
-            namatim2: 'GRIZZLIES',
-            onClicked: () async {
-              await Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.fade,
-                    duration: const Duration(milliseconds: 0),
-                    reverseDuration: const Duration(milliseconds: 0),
-                    child: const Hasil()),
-              );
-            },
-            skor1: '120',
-            skor2: '105',
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            child: DateCard(
+              date: 'Hari Ini',
+            ),
           ),
-          MatchLiveCardHasil(
-            status: 'Live',
-            logo1: 'assets/bucksTim.png',
-            logo2: 'assets/lakersTim.png',
-            namatim1: 'BUCKS',
-            namatim2: 'LAKERS',
-            onClicked: () async {
-              await Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.fade,
-                    duration: const Duration(milliseconds: 0),
-                    reverseDuration: const Duration(milliseconds: 0),
-                    child: const Hasil()),
-              );
-            },
-            skor1: '120',
-            skor2: '105',
+          Container(
+            height: 450,
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            child: Consumer<PertandinganProvider>(
+              builder: (context, value, child) {
+                final listPertandingan = value.pertandingan;
+                return ListView.builder(
+                  itemCount: listPertandingan.length,
+                  itemBuilder: (context, index) {
+                    final PertandinganModel item = listPertandingan[index];
+                    return MatchLiveCardHasil(
+                      item: item,
+                      onClicked: () {},
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ],
       ),

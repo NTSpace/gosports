@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:gosports/models/pertandingan.dart';
+import 'package:gosports/models/pesertas.dart';
+import 'package:gosports/providers/tim_provider.dart';
 import 'package:gosports/shared/theme.dart';
+import 'package:provider/provider.dart';
 
 class MatchLiveCardHasil extends StatelessWidget {
-  final String logo1, logo2, namatim1, namatim2, status, skor1, skor2;
+  final PertandinganModel item;
   final VoidCallback onClicked;
 
   const MatchLiveCardHasil({
     Key? key,
-    required this.status,
-    required this.logo1,
-    required this.logo2,
-    required this.namatim1,
-    required this.namatim2,
+    required this.item,
     required this.onClicked,
-    required this.skor1,
-    required this.skor2,
   }) : super(key: key);
 
   @override
@@ -36,57 +34,69 @@ class MatchLiveCardHasil extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      status,
+                      item.status ?? '-',
                       style: redTextStyle.copyWith(
                         fontSize: 10,
                         fontWeight: semibold,
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 4.0),
-                      child: const Icon(
-                        Icons.circle,
-                        size: 10,
-                        color: Color(0xfff34141),
-                      ),
-                    ),
+                    // Container(
+                    //   margin: const EdgeInsets.only(left: 4.0),
+                    //   child: const Icon(
+                    //     Icons.circle,
+                    //     size: 10,
+                    //     color: Color(0xfff34141),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
-              Container(
-                width: 74,
-                height: 31,
-                margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 0,
-                    top: 8,
-                    bottom: 8,
-                    right: 8,
+              ChangeNotifierProvider<TimProvider>(
+                create: (context) =>
+                    TimProvider()..getTim(item.pesertas.first.links),
+                child: Consumer<TimProvider>(
+                  builder: (context, value, child) => Row(
+                    children: [
+                      Container(
+                        width: 74,
+                        height: 31,
+                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 0,
+                            top: 8,
+                            bottom: 8,
+                            right: 8,
+                          ),
+                          child: Consumer<TimProvider>(
+                            builder: (context, value, child) => Text(
+                              value.tim?.nama ?? '-',
+                              textAlign: TextAlign.end,
+                              style: blackTextStyle.copyWith(
+                                fontSize: 10,
+                                fontWeight: regular,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 32,
+                        height: 32,
+                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Image.network(
+                          value.tim?.logo ?? '-',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    namatim1,
-                    textAlign: TextAlign.end,
-                    style: blackTextStyle.copyWith(
-                      fontSize: 10,
-                      fontWeight: regular,
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 32,
-                height: 32,
-                margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Image.asset(
-                  logo1,
-                  fit: BoxFit.contain,
                 ),
               ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Text(
-                  skor1,
+                  '120',
                   style: orangeTextStyle.copyWith(
                     fontSize: 10,
                     fontWeight: bold,
@@ -103,34 +113,44 @@ class MatchLiveCardHasil extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Text(
-                skor2,
+                '105',
                 style: greyTextStyle.copyWith(
                   fontSize: 10,
                   fontWeight: bold,
                 ),
                 textAlign: TextAlign.center,
               ),
-              Container(
-                width: 32,
-                height: 32,
-                margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Image.asset(
-                  logo2,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              Container(
-                width: 74,
-                height: 31,
-                padding: const EdgeInsets.only(right: 4.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    namatim2,
-                    style: blackTextStyle.copyWith(
-                      fontSize: 10,
-                      fontWeight: regular,
-                    ),
+              ChangeNotifierProvider<TimProvider>(
+                create: (context) =>
+                    TimProvider()..getTim(item.pesertas.last.links),
+                child: Consumer<TimProvider>(
+                  builder: (context, value, child) => Row(
+                    children: [
+                      Container(
+                        width: 32,
+                        height: 32,
+                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Image.network(
+                          value.tim?.logo ?? '-',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Container(
+                        width: 74,
+                        height: 31,
+                        margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            value.tim?.nama ?? '-',
+                            style: blackTextStyle.copyWith(
+                              fontSize: 10,
+                              fontWeight: regular,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

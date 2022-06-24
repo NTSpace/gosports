@@ -24,10 +24,6 @@ class _PertandinganHasilState extends State<PertandinganHasil> {
               height: 23,
             ),
             ListPertandinganHasil(),
-            const SizedBox(
-              height: 17,
-            ),
-            ListPertandinganHasil(),
           ],
         )
       ],

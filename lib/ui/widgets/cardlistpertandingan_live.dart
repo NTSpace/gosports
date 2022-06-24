@@ -21,7 +21,7 @@ class _ListPertandinganLiveState extends State<ListPertandinganLive> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    context.read<PertandinganProvider>().getPertandinganJadwal();
+    context.read<PertandinganProvider>().getPertandinganHasil();
   }
 
   @override
@@ -29,14 +29,14 @@ class _ListPertandinganLiveState extends State<ListPertandinganLive> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 25),
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           child: DateCard(
             date: 'Hari Ini',
           ),
         ),
         Container(
-          height: 500,
-          margin: const EdgeInsets.symmetric(horizontal: 25),
+          height: 450,
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Consumer<PertandinganProvider>(
             builder: (context, value, child) {
               final listPertandingan = value.pertandingan;
